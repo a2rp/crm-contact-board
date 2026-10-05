@@ -1,4 +1,4 @@
-﻿.root:global(.contact-card) {
+.root.contact-card {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,19 +15,19 @@
         box-shadow 180ms ease;
 }
 
-.root:global(.contact-card):hover {
+.root.contact-card:hover {
     border-color: #b9c9ae;
     box-shadow: 0 7px 18px rgba(45, 66, 49, 0.1);
 }
 
-.root :global(.card-topline) {
+.root .card-topline {
     display: flex;
     align-items: center;
     gap: 7px;
     margin-bottom: 8px;
 }
 
-.root :global(.follow-chip) {
+.root .follow-chip {
     display: inline-flex;
     align-items: center;
     gap: 4px;
@@ -41,27 +41,27 @@
     white-space: nowrap;
 }
 
-.root :global(.follow-chip svg) {
+.root .follow-chip svg {
     width: 10px;
     height: 10px;
 }
 
-.root :global(.follow-chip.is-overdue) {
+.root .follow-chip.is-overdue {
     background: #fbefea;
     color: #bc795c;
 }
 
-.root :global(.card-more) {
+.root .card-more {
     display: none;
     color: #9aa59a;
 }
 
-.root :global(.card-more svg) {
+.root .card-more svg {
     width: 14px;
     height: 14px;
 }
 
-.root :global(.contact-name) {
+.root .contact-name {
     display: block;
     color: #33473a;
     font-size: 11px;
@@ -69,7 +69,7 @@
     line-height: 1.2;
 }
 
-.root :global(.contact-role) {
+.root .contact-role {
     display: block;
     margin-top: 3px;
     color: #8e9990;
@@ -77,7 +77,7 @@
     line-height: 1.25;
 }
 
-.root :global(.company-line) {
+.root .company-line {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -87,20 +87,20 @@
     font-weight: 650;
 }
 
-.root :global(.company-line svg) {
+.root .company-line svg {
     width: 11px;
     height: 11px;
     color: #9caa99;
 }
 
-.root :global(.tag-row) {
+.root .tag-row {
     display: flex;
     gap: 4px;
     min-height: 20px;
     margin-top: 8px;
 }
 
-.root :global(.tag) {
+.root .tag {
     padding: 3px 6px;
     border-radius: 4px;
     background: #f1f4ec;
@@ -109,19 +109,19 @@
     line-height: 1.3;
 }
 
-.root :global(.tag:nth-child(2)) {
+.root .tag:nth-child(2) {
     background: #f7eee7;
     color: #a47d65;
 }
 
-.root :global(.card-divider) {
+.root .card-divider {
     display: block;
     height: 1px;
     margin: 2px 0 7px;
     background: #f0f2ee;
 }
 
-.root :global(.card-footline) {
+.root .card-footline {
     display: flex;
     align-items: center;
     gap: 4px;
@@ -129,80 +129,80 @@
     font-size: 7px;
 }
 
-.root :global(.card-footline strong) {
+.root .card-footline strong {
     margin-left: auto;
     color: #77857a;
     font-size: 7px;
     font-weight: 650;
 }
 
-.root :global(.card-footline svg) {
+.root .card-footline svg {
     width: 11px;
     height: 11px;
     color: #a7b0a7;
 }
 
 @media (max-width: 1100px) {
-    .root:global(.contact-card) {
+    .root.contact-card {
         padding-right: 8px;
         padding-left: 8px;
     }
 }
 
 @media (max-width: 760px) {
-    .root:global(.contact-card) {
+    .root.contact-card {
         padding: 8px 7px 7px;
     }
 
-    .root :global(.card-topline) {
+    .root .card-topline {
         gap: 5px;
         margin-bottom: 6px;
     }
 
-    .root :global(.follow-chip) {
+    .root .follow-chip {
         gap: 3px;
         padding: 3px 4px;
         font-size: 6px;
     }
 
-    .root :global(.contact-name) {
+    .root .contact-name {
         font-size: 10px;
     }
 
-    .root :global(.contact-role),
-    .root :global(.company-line) {
+    .root .contact-role,
+    .root .company-line {
         font-size: 7px;
     }
 
-    .root :global(.company-line) {
+    .root .company-line {
         margin-top: 7px;
     }
 
-    .root :global(.tag-row) {
+    .root .tag-row {
         margin-top: 6px;
     }
 
-    .root :global(.tag) {
+    .root .tag {
         padding: 3px 4px;
         font-size: 6px;
     }
 
-    .root :global(.card-footline) {
+    .root .card-footline {
         font-size: 6px;
     }
 
-    .root :global(.card-footline strong) {
+    .root .card-footline strong {
         font-size: 6px;
     }
 }
 
 @media (max-width: 420px) {
-    .root:global(.contact-card) {
+    .root.contact-card {
         padding-right: 6px;
         padding-left: 6px;
     }
 
-    .root :global(.follow-chip) {
+    .root .follow-chip {
         font-size: 5px;
     }
 }

@@ -1,5 +1,5 @@
 
-.root :global(.panel-heading h2) {
+.root .panel-heading h2 {
     color: var(--ink);
     font-family: "DM Serif Display", Georgia, serif;
     font-size: 22px;
@@ -8,34 +8,34 @@
     line-height: 1;
 }
 
-.root:global(.bottom-grid) {
+.root.bottom-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.65fr) minmax(245px, 0.8fr);
     gap: 14px;
     margin-top: 32px;
     scroll-margin-top: 96px;
 }
-.root :global(.followup-panel) {
+.root .followup-panel {
     min-height: 242px;
     padding: 18px 20px 0;
     border: 1px solid #e4eae0;
     border-radius: 9px;
     background: white;
 }
-.root :global(.panel-heading) {
+.root .panel-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 11px;
 }
-.root :global(.panel-heading .eyebrow) {
+.root .panel-heading > div > div:first-child {
     margin-bottom: 5px;
     font-size: 7px;
 }
-.root :global(.panel-heading h2) {
+.root .panel-heading h2 {
     font-size: 21px;
 }
-.root :global(.text-button) {
+.root .text-button {
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -50,19 +50,19 @@
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
-.root :global(.text-button:hover) {
+.root .text-button:hover {
     border-color: #cbd8c7;
     box-shadow: 0 3px 9px rgba(44, 68, 52, 0.07);
 }
-.root :global(.text-button svg) {
+.root .text-button svg {
     width: 12px;
     height: 12px;
 }
-.root :global(.followup-list) {
+.root .followup-list {
     display: flex;
     flex-direction: column;
 }
-.root :global(.panel-footer-link) {
+.root .panel-footer-link {
     min-height: 36px;
     display: flex;
     align-items: center;
@@ -71,20 +71,20 @@
     font-size: 8px;
     font-weight: 650;
 }
-.root :global(.panel-footer-link svg) {
+.root .panel-footer-link svg {
     width: 13px;
     height: 13px;
 }
 @media (max-width: 760px) {
-    .root :global(.panel-heading h2) {
+    .root .panel-heading h2 {
         font-size: 19px;
     }
-    .root:global(.bottom-grid) {
+    .root.bottom-grid {
         grid-template-columns: 1fr;
         gap: 9px;
         margin-top: 23px;
     }
-    .root :global(.followup-panel) {
+    .root .followup-panel {
         min-height: 225px;
         padding: 15px 12px 0;
     }

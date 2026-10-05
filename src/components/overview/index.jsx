@@ -8,28 +8,30 @@ import {
     FiUsers,
 } from "react-icons/fi";
 import styles from "./styles.module.css";
+import appStyles from "../../App.module.css";
+import classNames from "../../utils/classNames.js";
 
 const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel, onAddContact, onToast }) => {
     return (
         <div className={styles.root}>
-                <section className="welcome-row" id="overview">
+                <section className={styles["welcome-row"]} id="overview">
                     <div>
-                        <div className="date-kicker">
-                            <span className="live-dot" /> YOUR RELATIONSHIP DESK{" "}
-                            <span className="kicker-separator">/</span>{" "}
+                        <div className={styles["date-kicker"]}>
+                            <span className={styles["live-dot"]} /> YOUR RELATIONSHIP DESK{" "}
+                            <span className={styles["kicker-separator"]}>/</span>{" "}
                             {todayLabel.toUpperCase()}
                         </div>
                         <h1>
                             Know who's <em>next.</em>
                         </h1>
-                        <p className="welcome-copy">
+                        <p className={styles["welcome-copy"]}>
                             A thoughtful follow-up can change everything. Here's
                             your day at a glance.
                         </p>
                     </div>
                     <button
                         type="button"
-                        className="button button-primary add-button"
+                        className={classNames(appStyles["button"], appStyles["button-primary"], styles["add-button"])}
                         onClick={onAddContact}
                     >
                         <FiPlus /> Add a contact
@@ -37,20 +39,20 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                 </section>
 
                 <section
-                    className="metric-row"
+                    className={styles["metric-row"]}
                     aria-label="Relationship summary"
                 >
-                    <article className="metric-card metric-main">
-                        <div className="metric-head">
-                            <span className="metric-icon">
+                    <article className={classNames(styles["metric-card"], styles["metric-main"])}>
+                        <div className={styles["metric-head"]}>
+                            <span className={styles["metric-icon"]}>
                                 <FiUsers />
                             </span>
-                            <span className="metric-label">
+                            <span className={styles["metric-label"]}>
                                 PEOPLE IN YOUR CIRCLE
                             </span>
                             <button
                                 type="button"
-                                className="mini-menu"
+                                className={styles["mini-menu"]}
                                 aria-label="Contact summary"
                                 onClick={() =>
                                     onToast("Your full contact list is below")
@@ -59,9 +61,9 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                                 <FiMoreHorizontal />
                             </button>
                         </div>
-                        <div className="metric-value">
+                        <div className={styles["metric-value"]}>
                             {contacts.length}
-                            <span className="metric-change">
+                            <span className={styles["metric-change"]}>
                                 <FiArrowUpRight /> 12%
                             </span>
                         </div>
@@ -80,19 +82,19 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                             and growing
                         </p>
                     </article>
-                    <article className="metric-card metric-accent">
-                        <div className="metric-head">
-                            <span className="metric-icon">
+                    <article className={classNames(styles["metric-card"], styles["metric-accent"])}>
+                        <div className={styles["metric-head"]}>
+                            <span className={styles["metric-icon"]}>
                                 <FiCalendar />
                             </span>
-                            <span className="metric-label">
+                            <span className={styles["metric-label"]}>
                                 NEEDS A TOUCH TODAY
                             </span>
-                            <span className="metric-pulse" />
+                            <span className={styles["metric-pulse"]} />
                         </div>
-                        <div className="metric-value">
+                        <div className={styles["metric-value"]}>
                             {dueToday}
-                            <span className="metric-out-of">
+                            <span className={styles["metric-out-of"]}>
                                 {" "}
                                 / {contacts.length}
                             </span>
@@ -106,19 +108,19 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                             are waiting
                         </p>
                     </article>
-                    <article className="metric-card metric-third">
-                        <div className="metric-head">
-                            <span className="metric-icon">
+                    <article className={classNames(styles["metric-card"], styles["metric-third"])}>
+                        <div className={styles["metric-head"]}>
+                            <span className={styles["metric-icon"]}>
                                 <FiSliders />
                             </span>
-                            <span className="metric-label">
+                            <span className={styles["metric-label"]}>
                                 ACTIVE RELATIONSHIPS
                             </span>
-                            <span className="metric-caption">THIS WEEK</span>
+                            <span className={styles["metric-caption"]}>THIS WEEK</span>
                         </div>
-                        <div className="metric-value">
+                        <div className={styles["metric-value"]}>
                             {openRelationships}
-                            <span className="metric-change metric-soft">
+                            <span className={classNames(styles["metric-change"], styles["metric-soft"])}>
                                 <FiArrowDownRight /> steady
                             </span>
                         </div>
@@ -127,10 +129,10 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                             calendar
                         </p>
                     </article>
-                    <div className="metric-note">
-                        <span className="note-mark">â€œ</span>
+                    <div className={styles["metric-note"]}>
+                        <span className={styles["note-mark"]}>â€œ</span>
                         <p>People remember how you make the follow-up feel.</p>
-                        <span className="note-attribution">
+                        <span className={styles["note-attribution"]}>
                             A LITTLE REMINDER
                         </span>
                     </div>

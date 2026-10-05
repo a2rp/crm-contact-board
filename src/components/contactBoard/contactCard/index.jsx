@@ -2,41 +2,45 @@ import { FiBriefcase, FiChevronRight, FiClock, FiMoreHorizontal } from "react-ic
 import Avatar from "../avatar/index.jsx";
 import { dateLabel, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
+import classNames from "../../../utils/classNames.js";
 
 const ContactCard = ({ contact, onOpen }) => {
     const due = relativeDate(contact.nextFollowUp);
     return (
         <button
-            className={`${styles.root} contact-card`}
+            className={classNames(styles.root, styles["contact-card"])}
             type="button"
             onClick={() => onOpen(contact)}
             aria-label={`Open ${contact.name}`}
         >
-            <div className="card-topline">
+            <div className={styles["card-topline"]}>
                 <Avatar contact={contact} />
                 <span
-                    className={`follow-chip ${due.includes("overdue") ? "is-overdue" : ""}`}
+                    className={classNames(
+                        styles["follow-chip"],
+                        due.includes("overdue") && styles["is-overdue"],
+                    )}
                 >
                     <FiClock aria-hidden="true" /> {due}
                 </span>
-                <span className="card-more">
+                <span className={styles["card-more"]}>
                     <FiMoreHorizontal aria-hidden="true" />
                 </span>
             </div>
-            <span className="contact-name">{contact.name}</span>
-            <span className="contact-role">{contact.role}</span>
-            <span className="company-line">
+            <span className={styles["contact-name"]}>{contact.name}</span>
+            <span className={styles["contact-role"]}>{contact.role}</span>
+            <span className={styles["company-line"]}>
                 <FiBriefcase aria-hidden="true" /> {contact.company}
             </span>
-            <span className="tag-row">
+            <span className={styles["tag-row"]}>
                 {contact.tags.slice(0, 2).map((tag) => (
-                    <span className="tag" key={tag}>
+                    <span className={styles["tag"]} key={tag}>
                         {tag}
                     </span>
                 ))}
             </span>
-            <span className="card-divider" />
-            <span className="card-footline">
+            <span className={styles["card-divider"]} />
+            <span className={styles["card-footline"]}>
                 <span>Last touch</span>
                 <strong>{dateLabel(contact.lastContact)}</strong>
                 <FiChevronRight aria-hidden="true" />

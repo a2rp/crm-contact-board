@@ -1,5 +1,5 @@
 
-.root:global(.week-card) {
+.root.week-card {
     min-height: 242px;
     display: flex;
     flex-direction: column;
@@ -9,12 +9,12 @@
     border-radius: 9px;
     background: #eaf0df;
 }
-.root :global(.week-card-top) {
+.root .week-card-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.root :global(.week-badge) {
+.root .week-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -23,44 +23,44 @@
     font-weight: 750;
     letter-spacing: 0.11em;
 }
-.root :global(.week-badge svg) {
+.root .week-badge svg {
     width: 12px;
     height: 12px;
 }
-.root :global(.week-spark) {
+.root .week-spark {
     height: 26px;
     display: flex;
     align-items: end;
     gap: 3px;
 }
-.root :global(.week-spark i) {
+.root .week-spark i {
     width: 4px;
     border-radius: 3px 3px 0 0;
     background: #b6cc8c;
 }
-.root :global(.week-spark i:nth-child(1)) {
+.root .week-spark i:nth-child(1) {
     height: 9px;
 }
-.root :global(.week-spark i:nth-child(2)) {
+.root .week-spark i:nth-child(2) {
     height: 17px;
 }
-.root :global(.week-spark i:nth-child(3)) {
+.root .week-spark i:nth-child(3) {
     height: 12px;
 }
-.root :global(.week-spark i:nth-child(4)) {
+.root .week-spark i:nth-child(4) {
     height: 22px;
 }
-.root :global(.week-spark i:nth-child(5)) {
+.root .week-spark i:nth-child(5) {
     height: 15px;
 }
-.root :global(.week-spark i:nth-child(6)) {
+.root .week-spark i:nth-child(6) {
     height: 25px;
     background: #8ba666;
 }
-.root :global(.week-spark i:nth-child(7)) {
+.root .week-spark i:nth-child(7) {
     height: 18px;
 }
-.root :global(.week-count) {
+.root .week-count {
     margin-top: 18px;
     color: #405a42;
     font-family: "DM Serif Display", Georgia, serif;
@@ -68,7 +68,7 @@
     letter-spacing: -1.8px;
     line-height: 1;
 }
-.root :global(.week-count span) {
+.root .week-count span {
     margin-left: 8px;
     color: #82927d;
     font-family: "DM Sans", sans-serif;
@@ -76,7 +76,7 @@
     font-weight: 550;
     letter-spacing: 0;
 }
-.root :global(.week-card > p) {
+.root .week-card > p {
     max-width: 225px;
     margin-top: 8px;
     color: #778771;
@@ -84,7 +84,7 @@
     font-size: 16px;
     line-height: 1.25;
 }
-.root :global(.week-bottom) {
+.root .week-bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,18 +94,18 @@
     color: #7a8b74;
     font-size: 8px;
 }
-.root :global(.week-bottom > span) {
+.root .week-bottom > span {
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.root :global(.week-bottom > span i) {
+.root .week-bottom > span i {
     width: 5px;
     height: 5px;
     border-radius: 50%;
     background: #8fac68;
 }
-.root :global(.week-bottom button) {
+.root .week-bottom button {
     width: 25px;
     height: 25px;
     display: grid;
@@ -119,24 +119,24 @@
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
-.root :global(.week-bottom button:hover) {
+.root .week-bottom button:hover {
     border-color: #aebf9f;
     box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
 }
-.root :global(.week-bottom button svg) {
+.root .week-bottom button svg {
     width: 13px;
     height: 13px;
 }
 @media (max-width: 760px) {
-    .root:global(.week-card) {
+    .root.week-card {
         min-height: 180px;
         padding: 15px;
     }
-    .root :global(.week-count) {
+    .root .week-count {
         margin-top: 10px;
         font-size: 38px;
     }
-    .root :global(.week-card > p) {
+    .root .week-card > p {
         max-width: 250px;
         font-size: 14px;
     }

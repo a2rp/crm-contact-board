@@ -1,9 +1,5 @@
-﻿import { useEffect, useMemo, useState } from "react";
-import {
-    dateToday,
-    formatIsoDate,
-    isoDate,
-} from "./utils/dates.js";
+import { useEffect, useMemo, useState } from "react";
+import { dateToday, formatIsoDate, isoDate } from "./utils/dates.js";
 import { readContacts } from "./utils/contactStorage.js";
 import Footer from "./components/footer/index.jsx";
 import ContactModal from "./components/contactModal/index.jsx";
@@ -14,6 +10,7 @@ import FollowUps from "./components/followUps/index.jsx";
 import ClosingNote from "./components/closingNote/index.jsx";
 import Toast from "./components/toast/index.jsx";
 import styles from "./App.module.css";
+import classNames from "./utils/classNames.js";
 
 const App = () => {
     const [contacts, setContacts] = useState(readContacts);
@@ -158,7 +155,7 @@ const App = () => {
         .sort((a, b) => a.nextFollowUp.localeCompare(b.nextFollowUp))
         .slice(0, 4);
     return (
-        <div className={`${styles.root} app-shell`}>
+        <div className={classNames(styles.root, styles["app-shell"])}>
             <Header
                 activeNav={activeNav}
                 contactsCount={contacts.length}
@@ -168,7 +165,7 @@ const App = () => {
                 onToast={setToast}
             />
 
-            <main className="page-content">
+            <main className={styles["page-content"]}>
                 <Overview
                     contacts={contacts}
                     dueToday={dueToday}

@@ -2,12 +2,16 @@ import { FiCheck } from "react-icons/fi";
 import Avatar from "../../contactBoard/avatar/index.jsx";
 import { isoDate, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
+import classNames from "../../../utils/classNames.js";
 
 const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
     return (
-<div className={`${styles.root} followup-item`}>
+<div className={classNames(styles.root, styles["followup-item"])}>
                                     <span
-                                        className={`follow-date ${contact.nextFollowUp <= isoDate() ? "today" : ""}`}
+                                        className={classNames(
+                                            styles["follow-date"],
+                                            contact.nextFollowUp <= isoDate() && styles.today,
+                                        )}
                                     >
                                         <strong>
                                             {new Date(
@@ -27,7 +31,7 @@ const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
                                     <Avatar contact={contact} size="small" />
                                     <button
                                         type="button"
-                                        className="followup-person"
+                                        className={styles["followup-person"]}
                                         onClick={() => onOpenContact(contact)}
                                     >
                                         <strong>{contact.name}</strong>
@@ -37,13 +41,16 @@ const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
                                         </span>
                                     </button>
                                     <span
-                                        className={`follow-relative ${contact.nextFollowUp <= isoDate() ? "is-today" : ""}`}
+                                        className={classNames(
+                                            styles["follow-relative"],
+                                            contact.nextFollowUp <= isoDate() && styles["is-today"],
+                                        )}
                                     >
                                         {relativeDate(contact.nextFollowUp)}
                                     </span>
                                     <button
                                         type="button"
-                                        className="done-button"
+                                        className={styles["done-button"]}
                                         onClick={() => onMarkDone(contact)}
                                         aria-label={`Mark follow-up with ${contact.name} done`}
                                     >

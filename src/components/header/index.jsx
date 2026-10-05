@@ -1,58 +1,63 @@
 import { useRef, useState } from "react";
 import { FiBell, FiChevronDown, FiSearch } from "react-icons/fi";
 import styles from "./styles.module.css";
+import appStyles from "../../App.module.css";
+import classNames from "../../utils/classNames.js";
 
 const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange, onToast }) => {
     const [searchOpen, setSearchOpen] = useState(false);
     const searchRef = useRef(null);
 
     return (
-            <header className={`${styles.root} topbar`}>
+            <header className={classNames(styles.root, styles.topbar)}>
                 <a
                     href="#overview"
-                    className="brand-lockup"
+                    className={styles["brand-lockup"]}
                     onClick={() => onNavChange("overview")}
                     aria-label="Kinfield home"
                 >
-                    <span className="brand-mark">
+                    <span className={styles["brand-mark"]}>
                         <i />
                         <i />
                         <i />
                         <i />
                     </span>
-                    <span className="brand-name">
-                        kinfield<span className="brand-dot">.</span>
+                    <span className={styles["brand-name"]}>
+                        kinfield<span className={styles["brand-dot"]}>.</span>
                     </span>
                 </a>
-                <nav className="main-nav" aria-label="Main navigation">
+                <nav className={styles["main-nav"]} aria-label="Main navigation">
                     <a
                         href="#overview"
-                        className={activeNav === "overview" ? "is-active" : ""}
+                        className={activeNav === "overview" ? styles["is-active"] : undefined}
                         onClick={() => onNavChange("overview")}
                     >
                         Overview
                     </a>
                     <a
                         href="#contacts"
-                        className={activeNav === "contacts" ? "is-active" : ""}
+                        className={activeNav === "contacts" ? styles["is-active"] : undefined}
                         onClick={() => onNavChange("contacts")}
                     >
                         Contacts{" "}
-                        <span className="nav-count">{contactsCount}</span>
+                        <span className={styles["nav-count"]}>{contactsCount}</span>
                     </a>
                     <a
                         href="#follow-ups"
                         className={
-                            activeNav === "follow-ups" ? "is-active" : ""
+                            activeNav === "follow-ups" ? styles["is-active"] : undefined
                         }
                         onClick={() => onNavChange("follow-ups")}
                     >
                         Follow-ups
                     </a>
                 </nav>
-                <div className="topbar-tools">
+                <div className={styles["topbar-tools"]}>
                     <label
-                        className={`search-box ${searchOpen ? "search-open" : ""}`}
+                        className={classNames(
+                            styles["search-box"],
+                            searchOpen && styles["search-open"],
+                        )}
                         onClick={() => {
                             setSearchOpen(true);
                             requestAnimationFrame(() =>
@@ -74,7 +79,7 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                         <kbd>âŒ˜ K</kbd>
                     </label>
                     <button
-                        className="icon-button notification-button"
+                        className={classNames(appStyles["icon-button"], styles["notification-button"])}
                         type="button"
                         aria-label="Show reminders"
                         onClick={() => {
@@ -87,17 +92,17 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                         <FiBell />
                         <i />
                     </button>
-                    <span className="topbar-rule" />
+                    <span className={styles["topbar-rule"]} />
                     <button
-                        className="profile-button"
+                        className={styles["profile-button"]}
                         type="button"
                         onClick={() =>
                             onToast("You are viewing your personal workspace")
                         }
                         aria-label="Your profile"
                     >
-                        <span className="profile-avatar">AR</span>
-                        <span className="profile-name">Ashish</span>
+                        <span className={styles["profile-avatar"]}>AR</span>
+                        <span className={styles["profile-name"]}>Ashish</span>
                         <FiChevronDown />
                     </button>
                 </div>

@@ -1,6 +1,6 @@
 
 
-.root:global(.topbar) {
+.root.topbar {
     position: fixed;
     z-index: 20;
     inset: 0 0 auto;
@@ -13,13 +13,13 @@
     backdrop-filter: blur(16px);
 }
 
-.root :global(.brand-lockup) {
+.root .brand-lockup {
     display: flex;
     align-items: center;
     gap: 10px;
     min-width: 234px;
 }
-.root :global(.brand-mark) {
+.root .brand-mark {
     width: 27px;
     height: 27px;
     display: grid;
@@ -27,34 +27,34 @@
     gap: 3px;
     transform: rotate(-8deg);
 }
-.root :global(.brand-mark i) {
+.root .brand-mark i {
     display: block;
     border-radius: 4px 4px 2px 4px;
     background: var(--forest);
 }
-.root :global(.brand-mark i:nth-child(2)), .root :global(.brand-mark i:nth-child(3)) {
+.root .brand-mark i:nth-child(2), .root .brand-mark i:nth-child(3) {
     background: #a8c975;
 }
-.root :global(.brand-mark i:nth-child(4)) {
+.root .brand-mark i:nth-child(4) {
     background: var(--coral);
 }
-.root :global(.brand-name) {
+.root .brand-name {
     font-family: "DM Serif Display", Georgia, serif;
     font-size: 25px;
     letter-spacing: -1.3px;
     line-height: 1;
 }
-.root :global(.brand-dot) {
+.root .brand-dot {
     color: #a0bc61;
 }
 
-.root :global(.main-nav) {
+.root .main-nav {
     display: flex;
     align-items: stretch;
     height: 100%;
     gap: 32px;
 }
-.root :global(.main-nav a) {
+.root .main-nav a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -64,7 +64,7 @@
     font-weight: 600;
     letter-spacing: 0.01em;
 }
-.root :global(.main-nav a::after) {
+.root .main-nav a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -73,13 +73,13 @@
     height: 2px;
     background: transparent;
 }
-.root :global(.main-nav a.is-active) {
+.root .main-nav a.is-active {
     color: var(--forest);
 }
-.root :global(.main-nav a.is-active::after) {
+.root .main-nav a.is-active::after {
     background: var(--forest);
 }
-.root :global(.nav-count) {
+.root .nav-count {
     display: inline-flex;
     min-width: 21px;
     height: 20px;
@@ -91,13 +91,13 @@
     font-size: 10px;
 }
 
-.root :global(.topbar-tools) {
+.root .topbar-tools {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-left: auto;
 }
-.root :global(.search-box) {
+.root .search-box {
     width: 274px;
     height: 39px;
     display: flex;
@@ -109,11 +109,11 @@
     color: #819087;
     background: #fafbf8;
 }
-.root :global(.search-box > svg) {
+.root .search-box > svg {
     width: 15px;
     flex: 0 0 auto;
 }
-.root :global(.search-box input) {
+.root .search-box input {
     width: 100%;
     min-width: 0;
     padding: 0;
@@ -123,10 +123,10 @@
     color: var(--ink);
     font-size: 11px;
 }
-.root :global(.search-box input::placeholder) {
+.root .search-box input::placeholder {
     color: #9ba59d;
 }
-.root :global(.search-box kbd) {
+.root .search-box kbd {
     white-space: nowrap;
     padding: 2px 5px;
     border: 1px solid #e4e8e1;
@@ -137,7 +137,7 @@
         9px "DM Sans",
         sans-serif;
 }
-.root :global(.notification-button i) {
+.root .notification-button i {
     position: absolute;
     top: 7px;
     right: 7px;
@@ -147,13 +147,13 @@
     border-radius: 50%;
     background: #e38e70;
 }
-.root :global(.topbar-rule) {
+.root .topbar-rule {
     width: 1px;
     height: 30px;
     margin: 0 1px;
     background: var(--line);
 }
-.root :global(.profile-button) {
+.root .profile-button {
     display: flex;
     align-items: center;
     gap: 9px;
@@ -164,11 +164,11 @@
     font-weight: 650;
     cursor: pointer;
 }
-.root :global(.profile-button > svg) {
+.root .profile-button > svg {
     width: 13px;
     color: #849088;
 }
-.root :global(.profile-avatar) {
+.root .profile-avatar {
     width: 31px;
     height: 31px;
     display: grid;
@@ -180,53 +180,53 @@
     font-weight: 750;
 }
 @media (max-width: 1100px) {
-    .root:global(.topbar) {
+    .root.topbar {
         padding-right: 22px;
         padding-left: 22px;
     }
-    .root :global(.brand-lockup) {
+    .root .brand-lockup {
         min-width: 175px;
     }
-    .root :global(.main-nav) {
+    .root .main-nav {
         gap: 21px;
     }
-    .root :global(.search-box) {
+    .root .search-box {
         width: 220px;
     }
 }
 @media (max-width: 760px) {
-    .root:global(.topbar) {
+    .root.topbar {
         height: 66px;
         padding: 0 16px;
     }
-    .root :global(.brand-lockup) {
+    .root .brand-lockup {
         min-width: auto;
         margin-right: auto;
     }
-    .root :global(.brand-name) {
+    .root .brand-name {
         font-size: 23px;
     }
-    .root :global(.main-nav) {
+    .root .main-nav {
         gap: 16px;
         height: 100%;
         margin-left: 20px;
     }
-    .root :global(.main-nav a) {
+    .root .main-nav a {
         font-size: 10px;
     }
-    .root :global(.main-nav a:first-child) {
+    .root .main-nav a:first-child {
         display: none;
     }
-    .root :global(.nav-count) {
+    .root .nav-count {
         min-width: 17px;
         height: 16px;
         font-size: 8px;
     }
-    .root :global(.topbar-tools) {
+    .root .topbar-tools {
         gap: 7px;
         margin-left: 17px;
     }
-    .root :global(.search-box) {
+    .root .search-box {
         width: 34px;
         height: 34px;
         justify-content: center;
@@ -234,13 +234,13 @@
         border-color: transparent;
         background: transparent;
     }
-    .root :global(.search-box input), .root :global(.search-box kbd) {
+    .root .search-box input, .root .search-box kbd {
         display: none;
     }
-    .root :global(.search-box > svg) {
+    .root .search-box > svg {
         width: 18px;
     }
-    .root :global(.search-box.search-open) {
+    .root .search-box.search-open {
         position: absolute;
         right: 94px;
         width: min(220px, calc(100vw - 185px));
@@ -249,40 +249,40 @@
         border-color: #e3e9df;
         background: white;
     }
-    .root :global(.search-box.search-open input) {
+    .root .search-box.search-open input {
         display: block;
         font-size: 10px;
     }
-    .root :global(.search-box.search-open > svg) {
+    .root .search-box.search-open > svg {
         width: 15px;
     }
-    .root :global(.notification-button) {
+    .root .notification-button {
         width: 31px;
         height: 31px;
     }
-    .root :global(.topbar-rule), .root :global(.profile-name), .root :global(.profile-button > svg) {
+    .root .topbar-rule, .root .profile-name, .root .profile-button > svg {
         display: none;
     }
-    .root :global(.profile-avatar) {
+    .root .profile-avatar {
         width: 29px;
         height: 29px;
     }
-    .root :global(.profile-button) {
+    .root .profile-button {
         padding: 0;
     }
 }
 @media (max-width: 420px) {
-    .root:global(.topbar) {
+    .root.topbar {
         padding: 0 11px;
     }
-    .root :global(.main-nav) {
+    .root .main-nav {
         gap: 10px;
         margin-left: 12px;
     }
-    .root :global(.main-nav a) {
+    .root .main-nav a {
         font-size: 9px;
     }
-    .root :global(.topbar-tools) {
+    .root .topbar-tools {
         gap: 4px;
         margin-left: 10px;
     }

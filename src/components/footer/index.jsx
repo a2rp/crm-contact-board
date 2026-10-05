@@ -12,6 +12,7 @@ import {
 import { FiMail } from "react-icons/fi";
 import { currentYear } from "../../utils/dates.js";
 import styles from "./styles.module.css";
+import classNames from "../../utils/classNames.js";
 
 const footerLinks = [
     {
@@ -60,10 +61,10 @@ const footerLinks = [
 
 const Footer = () => {
     return (
-        <footer className={`${styles.root} site-footer`}>
-            <div className="footer-credit">
+        <footer className={classNames(styles.root, styles["site-footer"])}>
+            <div className={styles["footer-credit"]}>
                 <a
-                    className="footer-logo"
+                    className={styles["footer-logo"]}
                     href="https://www.ashishranjan.net"
                     target="_blank"
                     rel="noreferrer"
@@ -86,7 +87,7 @@ const Footer = () => {
                     . All rights reserved.
                 </p>
             </div>
-            <nav className="footer-links" aria-label="Ashish Ranjan links">
+            <nav className={styles["footer-links"]} aria-label="Ashish Ranjan links">
                 {footerLinks.map((link) => (
                     <a
                         href={link.href}

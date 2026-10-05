@@ -2,24 +2,26 @@ import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
 import FollowUpItem from "./followUpItem/index.jsx";
 import WeekCard from "./weekCard/index.jsx";
 import styles from "./styles.module.css";
+import appStyles from "../../App.module.css";
+import classNames from "../../utils/classNames.js";
 
 const FollowUps = ({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onNavChange, onAddContact }) => {
     return (
-                <section className={`${styles.root} bottom-grid`} id="follow-ups">
-                    <article className="followup-panel">
-                        <div className="panel-heading">
+                <section className={classNames(styles.root, styles["bottom-grid"])} id="follow-ups">
+                    <article className={styles["followup-panel"]}>
+                        <div className={styles["panel-heading"]}>
                             <div>
-                                <div className="eyebrow">
+                                <div className={appStyles["eyebrow"]}>
                                     MAKE THE NEXT MOVE
                                 </div>
                                 <h2>
                                     Coming up
-                                    <span className="heading-period">.</span>
+                                    <span className={appStyles["heading-period"]}>.</span>
                                 </h2>
                             </div>
                             <button
                                 type="button"
-                                className="text-button"
+                                className={styles["text-button"]}
                                 onClick={() =>
                                     onToast(
                                         `${thisWeek} follow-ups are scheduled this week`,
@@ -29,7 +31,7 @@ const FollowUps = ({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onN
                                 This week <FiChevronDown />
                             </button>
                         </div>
-                        <div className="followup-list">
+                        <div className={styles["followup-list"]}>
                             {upcoming.map((contact) => (
                                 <FollowUpItem
                                     key={contact.id}
@@ -40,7 +42,7 @@ const FollowUps = ({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onN
                             ))}
                         </div>
                         <a
-                            className="panel-footer-link"
+                            className={styles["panel-footer-link"]}
                             href="#contacts"
                             onClick={() => onNavChange("contacts")}
                         >

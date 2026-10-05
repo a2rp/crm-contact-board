@@ -1,4 +1,4 @@
-﻿.root:global(.avatar) {
+.root.avatar {
     width: 33px;
     height: 33px;
     display: inline-grid;
@@ -11,45 +11,45 @@
     font-weight: 750;
 }
 
-.root :global(img) {
+.root img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.root:global(.avatar-lavender) {
+.root.avatar-lavender {
     background: #ece8f1;
     color: #766c8b;
 }
 
-.root:global(.avatar-peach) {
+.root.avatar-peach {
     background: #f5e5d9;
     color: #a57353;
 }
 
-.root:global(.avatar-mint) {
+.root.avatar-mint {
     background: #e3ede1;
     color: #5d785e;
 }
 
-.root:global(.avatar-blue) {
+.root.avatar-blue {
     background: #e1eaf0;
     color: #607e8e;
 }
 
-.root:global(.avatar-yellow) {
+.root.avatar-yellow {
     background: #f0efd7;
     color: #8a8750;
 }
 
-.root:global(.avatar-small) {
+.root.avatar-small {
     width: 30px;
     height: 30px;
     font-size: 8px;
 }
 
 @media (max-width: 760px) {
-    .root:global(.avatar) {
+    .root.avatar {
         width: 29px;
         height: 29px;
     }

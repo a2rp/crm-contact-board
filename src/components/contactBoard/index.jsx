@@ -1,4 +1,4 @@
-﻿import {
+import {
     FiChevronDown,
     FiChevronRight,
     FiDownload,
@@ -14,29 +14,31 @@ import { dateLabel, isoDate, relativeDate } from "../../utils/dates.js";
 import Avatar from "./avatar/index.jsx";
 import ContactCard from "./contactCard/index.jsx";
 import styles from "./styles.module.css";
+import appStyles from "../../App.module.css";
+import classNames from "../../utils/classNames.js";
 
 const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage, onToast }) => {
     return (
         <div className={styles.root}>
-                <section className="board-section" id="contacts">
-                    <div className="section-heading">
-                        <div className="section-title-wrap">
-                            <div className="section-icon">
+                <section className={styles["board-section"]} id="contacts">
+                    <div className={styles["section-heading"]}>
+                        <div className={styles["section-title-wrap"]}>
+                            <div className={styles["section-icon"]}>
                                 <FiUsers />
                             </div>
                             <div>
-                                <div className="eyebrow">YOUR PEOPLE</div>
+                                <div className={appStyles["eyebrow"]}>YOUR PEOPLE</div>
                                 <h2>
                                     Relationship board
-                                    <span className="heading-period">.</span>
+                                    <span className={appStyles["heading-period"]}>.</span>
                                 </h2>
                             </div>
-                            <span className="contact-total">
+                            <span className={styles["contact-total"]}>
                                 {filteredContacts.length} contacts
                             </span>
                         </div>
-                        <div className="board-controls">
-                            <label className="filter-select">
+                        <div className={styles["board-controls"]}>
+                            <label className={styles["filter-select"]}>
                                 <FiFilter />
                                 <select
                                     aria-label="Filter by stage"
@@ -53,14 +55,14 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                 <FiChevronDown />
                             </label>
                             <div
-                                className="view-toggle"
+                                className={styles["view-toggle"]}
                                 role="group"
                                 aria-label="Board display"
                             >
                                 <button
                                     type="button"
                                     className={
-                                        view === "board" ? "selected" : ""
+                                        view === "board" ? styles.selected : undefined
                                     }
                                     onClick={() => onViewChange("board")}
                                     aria-label="Board view"
@@ -70,7 +72,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                 <button
                                     type="button"
                                     className={
-                                        view === "list" ? "selected" : ""
+                                        view === "list" ? styles.selected : undefined
                                     }
                                     onClick={() => onViewChange("list")}
                                     aria-label="List view"
@@ -79,7 +81,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                 </button>
                             </div>
                             <button
-                                className="icon-button export-button"
+                                className={classNames(appStyles["icon-button"], styles["export-button"])}
                                 type="button"
                                 onClick={onExport}
                                 aria-label="Export contacts"
@@ -90,26 +92,29 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                     </div>
 
                     {view === "board" ? (
-                        <div className="kanban-board">
+                        <div className={styles["kanban-board"]}>
                             {stageList.map((stage, index) => {
                                 const inStage = filteredContacts.filter(
                                     (contact) => contact.stage === stage,
                                 );
                                 return (
                                     <section
-                                        className={`kanban-column column-${index + 1}`}
+                                        className={classNames(
+                                            styles["kanban-column"],
+                                            styles[`column-${index + 1}`],
+                                        )}
                                         key={stage}
                                         aria-label={`${stage} contacts`}
                                     >
-                                        <div className="column-heading">
-                                            <span className="column-marker" />
+                                        <div className={styles["column-heading"]}>
+                                            <span className={styles["column-marker"]} />
                                             <h3>{stage}</h3>
-                                            <span className="column-count">
+                                            <span className={styles["column-count"]}>
                                                 {inStage.length}
                                             </span>
                                             <button
                                                 type="button"
-                                                className="column-menu"
+                                                className={styles["column-menu"]}
                                                 aria-label={`${stage} options`}
                                                 onClick={() =>
                                                     onToast(
@@ -120,7 +125,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                                 <FiMoreHorizontal />
                                             </button>
                                         </div>
-                                        <div className="column-cards">
+                                        <div className={styles["column-cards"]}>
                                             {inStage.length ? (
                                                 inStage.map((contact) => (
                                                     <ContactCard
@@ -130,12 +135,12 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                                     />
                                                 ))
                                             ) : (
-                                                <p className="empty-stage">
+                                                <p className={styles["empty-stage"]}>
                                                     No contacts here yet
                                                 </p>
                                             )}
                                             <button
-                                                className="add-to-stage"
+                                                className={styles["add-to-stage"]}
                                                 type="button"
                                                 onClick={() => onAddToStage(stage)}
                                             >
@@ -147,8 +152,8 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                             })}
                         </div>
                     ) : (
-                        <div className="contact-table-wrap">
-                            <table className="contact-table">
+                        <div className={styles["contact-table-wrap"]}>
+                            <table className={styles["contact-table"]}>
                                 <thead>
                                     <tr>
                                         <th>Person</th>
@@ -165,7 +170,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                             onClick={() => onOpenContact(contact)}
                                         >
                                             <td>
-                                                <span className="table-person">
+                                                <span className={styles["table-person"]}>
                                                     <Avatar
                                                         contact={contact}
                                                         size="small"
@@ -183,7 +188,10 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                             <td>{contact.company}</td>
                                             <td>
                                                 <span
-                                                    className={`stage-pill stage-${contact.stage.toLowerCase()}`}
+                                                    className={classNames(
+                                                        styles["stage-pill"],
+                                                        styles[`stage-${contact.stage.toLowerCase()}`],
+                                                    )}
                                                 >
                                                     {contact.stage}
                                                 </span>
@@ -192,7 +200,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                                 {dateLabel(
                                                     contact.nextFollowUp,
                                                 )}{" "}
-                                                <small className="table-relative">
+                                                <small className={styles["table-relative"]}>
                                                     {relativeDate(
                                                         contact.nextFollowUp,
                                                     )}
@@ -207,7 +215,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                         <tr>
                                             <td
                                                 colSpan="5"
-                                                className="no-results"
+                                                className={styles["no-results"]}
                                             >
                                                 No people match that search yet.
                                             </td>

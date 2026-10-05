@@ -3,6 +3,8 @@ import { FiArrowUpRight, FiCheck, FiX } from "react-icons/fi";
 import { stageList } from "../../data/contacts.js";
 import { isoDate } from "../../utils/dates.js";
 import styles from "./styles.module.css";
+import appStyles from "../../App.module.css";
+import classNames from "../../utils/classNames.js";
 
 const ContactModal = ({ contact, onClose, onSave }) => {
     const isExisting = Boolean(contact?.name);
@@ -46,21 +48,21 @@ const ContactModal = ({ contact, onClose, onSave }) => {
 
     return (
         <div
-            className={`${styles.root} modal-scrim`}
+            className={classNames(styles.root, styles["modal-scrim"])}
             role="presentation"
             onMouseDown={(event) =>
                 event.target === event.currentTarget && onClose()
             }
         >
             <section
-                className="contact-modal"
+                className={styles["contact-modal"]}
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby="contact-modal-title"
             >
-                <div className="modal-heading">
+                <div className={styles["modal-heading"]}>
                     <div>
-                        <span className="eyebrow">
+                        <span className={appStyles["eyebrow"]}>
                             {isExisting
                                 ? "CONTACT PROFILE"
                                 : "NEW RELATIONSHIP"}
@@ -73,7 +75,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                     </div>
                     <button
                         type="button"
-                        className="icon-button close-button"
+                        className={classNames(appStyles["icon-button"], styles["close-button"])}
                         onClick={onClose}
                         aria-label="Close"
                     >
@@ -81,8 +83,8 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                     </button>
                 </div>
                 <form onSubmit={submit}>
-                    <div className="modal-fields">
-                        <label className="field full-field">
+                    <div className={styles["modal-fields"]}>
+                        <label className={classNames(styles["field"], styles["full-field"])}>
                             Full name
                             <input
                                 name="name"
@@ -92,7 +94,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="Name"
                             />
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Role
                             <input
                                 name="role"
@@ -101,7 +103,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="What they do"
                             />
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Company
                             <input
                                 name="company"
@@ -110,7 +112,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="Where they work"
                             />
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Email
                             <input
                                 name="email"
@@ -120,7 +122,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="name@company.com"
                             />
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Phone
                             <input
                                 name="phone"
@@ -129,7 +131,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="Optional"
                             />
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Relationship stage
                             <select
                                 name="stage"
@@ -141,7 +143,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 ))}
                             </select>
                         </label>
-                        <label className="field">
+                        <label className={styles["field"]}>
                             Next follow-up
                             <input
                                 name="nextFollowUp"
@@ -150,7 +152,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 onChange={setField}
                             />
                         </label>
-                        <label className="field full-field">
+                        <label className={classNames(styles["field"], styles["full-field"])}>
                             Tags
                             <input
                                 value={tagsText}
@@ -160,7 +162,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="Design, Referral"
                             />
                         </label>
-                        <label className="field full-field">
+                        <label className={classNames(styles["field"], styles["full-field"])}>
                             A note to remember
                             <textarea
                                 name="notes"
@@ -171,21 +173,21 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                             />
                         </label>
                     </div>
-                    <div className="modal-actions">
-                        <span className="save-hint">
+                    <div className={styles["modal-actions"]}>
+                        <span className={styles["save-hint"]}>
                             <FiCheck aria-hidden="true" /> Saved to this browser
                         </span>
                         <div>
                             <button
                                 type="button"
-                                className="button button-quiet"
+                                className={classNames(appStyles["button"], styles["button-quiet"])}
                                 onClick={onClose}
                             >
                                 Cancel
                             </button>
                             <button
                                 type="submit"
-                                className="button button-primary"
+                                className={classNames(appStyles["button"], appStyles["button-primary"])}
                             >
                                 {isExisting ? "Save changes" : "Add contact"}{" "}
                                 <FiArrowUpRight />

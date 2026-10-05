@@ -1,4 +1,4 @@
-.root:global(.app-shell) {
+.root.app-shell {
     min-height: 100vh;
     color: var(--ink);
     background: var(--paper);
@@ -9,25 +9,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.root :global(button:focus-visible),
-.root :global(a:focus-visible),
-.root :global(input:focus-visible),
-.root :global(select:focus-visible),
-.root :global(textarea:focus-visible) {
-    outline: 3px solid rgba(151, 179, 91, 0.55);
-    outline-offset: 3px;
-}
-
-.root :global(::selection) {
-    color: var(--forest-deep);
-    background: var(--lime);
-}
-
-.root :global(.heading-period) {
+.root .heading-period {
     color: #a0bc61;
 }
 
-.root :global(.icon-button) {
+.root .icon-button {
     width: 36px;
     height: 36px;
     display: inline-flex;
@@ -44,36 +30,29 @@
         box-shadow 180ms ease;
 }
 
-.root :global(.icon-button:hover) {
+.root .icon-button:hover {
     border-color: #dce4d8;
     box-shadow: 0 3px 10px rgba(44, 68, 52, 0.08);
 }
 
-.root :global(.icon-button svg) {
+.root .icon-button svg {
     width: 17px;
     height: 17px;
 }
 
-.root :global(.page-content) {
+.root .page-content {
     max-width: 1452px;
     margin: 0 auto;
     padding: 112px 34px 30px;
 }
 
-.root :global(.eyebrow) {
-    color: #929e94;
-    font-size: 9px;
-    font-weight: 750;
-    letter-spacing: 0.14em;
-}
-
-.root :global(h2),
-.root :global(h3),
-.root :global(p) {
+.root h2,
+.root h3,
+.root p {
     margin: 0;
 }
 
-.root :global(.button) {
+.root .button {
     min-height: 40px;
     display: inline-flex;
     align-items: center;
@@ -90,44 +69,44 @@
         box-shadow 180ms ease;
 }
 
-.root :global(.button svg) {
+.root .button svg {
     width: 15px;
     height: 15px;
 }
 
-.root :global(.button-primary) {
+.root .button-primary {
     border-color: var(--forest);
     background: var(--forest);
     color: white;
 }
 
-.root :global(.button-primary:hover) {
+.root .button-primary:hover {
     border-color: #426852;
     box-shadow: 0 5px 14px rgba(42, 69, 53, 0.2);
 }
 
 @media (min-width: 1500px) {
-    .root :global(.page-content) {
+    .root .page-content {
         padding-right: 0;
         padding-left: 0;
     }
 }
 
 @media (max-width: 1100px) {
-    .root :global(.page-content) {
+    .root .page-content {
         padding-right: 22px;
         padding-left: 22px;
     }
 }
 
 @media (max-width: 760px) {
-    .root :global(.page-content) {
+    .root .page-content {
         padding: 93px 16px 18px;
     }
 }
 
 @media (max-width: 420px) {
-    .root :global(.page-content) {
+    .root .page-content {
         padding-right: 11px;
         padding-left: 11px;
     }
