@@ -9,7 +9,7 @@ import {
 } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-function Overview({ contacts, dueToday, openRelationships, thisWeek, todayLabel, onAddContact, onToast }) {
+const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel, onAddContact, onToast }) => {
     return (
         <div className={styles.root}>
                 <section className="welcome-row" id="overview">
@@ -137,6 +137,6 @@ function Overview({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                 </section>
         </div>
     );
-}
+};
 
 export default Overview;

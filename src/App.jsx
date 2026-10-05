@@ -15,7 +15,7 @@ import ClosingNote from "./components/closingNote/index.jsx";
 import Toast from "./components/toast/index.jsx";
 import styles from "./App.module.css";
 
-function App() {
+const App = () => {
     const [contacts, setContacts] = useState(readContacts);
     const [search, setSearch] = useState("");
     const [activeStage, setActiveStage] = useState("All stages");
@@ -238,6 +238,6 @@ function App() {
             {toast && <Toast message={toast} />}
         </div>
     );
-}
+};
 
 export default App;

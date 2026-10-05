@@ -4,7 +4,7 @@ import { stageList } from "../../data/contacts.js";
 import { isoDate } from "../../utils/dates.js";
 import styles from "./styles.module.css";
 
-function ContactModal({ contact, onClose, onSave }) {
+const ContactModal = ({ contact, onClose, onSave }) => {
     const isExisting = Boolean(contact?.name);
     const [form, setForm] = useState(
         () =>
@@ -196,6 +196,6 @@ function ContactModal({ contact, onClose, onSave }) {
             </section>
         </div>
     );
-}
+};
 
 export default ContactModal;

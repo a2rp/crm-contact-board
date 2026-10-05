@@ -3,7 +3,7 @@ import FollowUpItem from "./followUpItem/index.jsx";
 import WeekCard from "./weekCard/index.jsx";
 import styles from "./styles.module.css";
 
-function FollowUps({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onNavChange, onAddContact }) {
+const FollowUps = ({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onNavChange, onAddContact }) => {
     return (
                 <section className={`${styles.root} bottom-grid`} id="follow-ups">
                     <article className="followup-panel">
@@ -50,6 +50,6 @@ function FollowUps({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onN
                     <WeekCard thisWeek={thisWeek} upcoming={upcoming} onAddContact={onAddContact} />
                 </section>
     );
-}
+};
 
 export default FollowUps;

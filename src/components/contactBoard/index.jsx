@@ -15,7 +15,7 @@ import Avatar from "./avatar/index.jsx";
 import ContactCard from "./contactCard/index.jsx";
 import styles from "./styles.module.css";
 
-function ContactBoard({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage, onToast }) {
+const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage, onToast }) => {
     return (
         <div className={styles.root}>
                 <section className="board-section" id="contacts">
@@ -220,7 +220,7 @@ function ContactBoard({ filteredContacts, activeStage, onStageChange, view, onVi
                 </section>
         </div>
     );
-}
+};
 
 export default ContactBoard;
 

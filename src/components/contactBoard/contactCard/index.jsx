@@ -3,7 +3,7 @@ import Avatar from "../avatar/index.jsx";
 import { dateLabel, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
 
-function ContactCard({ contact, onOpen }) {
+const ContactCard = ({ contact, onOpen }) => {
     const due = relativeDate(contact.nextFollowUp);
     return (
         <button
@@ -43,6 +43,6 @@ function ContactCard({ contact, onOpen }) {
             </span>
         </button>
     );
-}
+};
 
 export default ContactCard;

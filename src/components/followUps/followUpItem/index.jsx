@@ -3,7 +3,7 @@ import Avatar from "../../contactBoard/avatar/index.jsx";
 import { isoDate, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
 
-function FollowUpItem({ contact, onOpenContact, onMarkDone }) {
+const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
     return (
 <div className={`${styles.root} followup-item`}>
                                     <span
@@ -51,6 +51,6 @@ function FollowUpItem({ contact, onOpenContact, onMarkDone }) {
                                     </button>
                                 </div>
     );
-}
+};
 
 export default FollowUpItem;

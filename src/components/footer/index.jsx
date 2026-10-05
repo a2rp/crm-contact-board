@@ -58,7 +58,7 @@ const footerLinks = [
     },
 ];
 
-function Footer() {
+const Footer = () => {
     return (
         <footer className={`${styles.root} site-footer`}>
             <div className="footer-credit">
@@ -107,6 +107,6 @@ function Footer() {
             </nav>
         </footer>
     );
-}
+};
 
 export default Footer;

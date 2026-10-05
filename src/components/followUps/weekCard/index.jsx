@@ -2,7 +2,7 @@ import { FiCalendar, FiPlus } from "react-icons/fi";
 import { relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
 
-function WeekCard({ thisWeek, upcoming, onAddContact }) {
+const WeekCard = ({ thisWeek, upcoming, onAddContact }) => {
     return (
 <article className={`${styles.root} week-card`}>
                         <div className="week-card-top">
@@ -45,6 +45,6 @@ function WeekCard({ thisWeek, upcoming, onAddContact }) {
                         </div>
                     </article>
     );
-}
+};
 
 export default WeekCard;

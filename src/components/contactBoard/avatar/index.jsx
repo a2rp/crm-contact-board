@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 
-function Avatar({ contact, size = "regular" }) {
+const Avatar = ({ contact, size = "regular" }) => {
     const initials = contact.name
         .split(" ")
         .map((part) => part[0])
@@ -13,6 +13,6 @@ function Avatar({ contact, size = "regular" }) {
             {contact.avatar ? <img src={contact.avatar} alt="" /> : initials}
         </span>
     );
-}
+};
 
 export default Avatar;

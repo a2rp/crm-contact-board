@@ -1,7 +1,7 @@
 import { FiCheck } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-function Toast({ message }) {
+const Toast = ({ message }) => {
     return (
         <div className={styles.root + " toast-message"} role="status">
             <span>
@@ -10,6 +10,6 @@ function Toast({ message }) {
             {message}
         </div>
     );
-}
+};
 
 export default Toast;

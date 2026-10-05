@@ -1,7 +1,7 @@
 import { FiHeart } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-function ClosingNote() {
+const ClosingNote = () => {
     return (
                 <div className={`${styles.root} closing-note`}>
                     <span className="closing-icon">
@@ -16,6 +16,6 @@ function ClosingNote() {
                     </span>
                 </div>
     );
-}
+};
 
 export default ClosingNote;

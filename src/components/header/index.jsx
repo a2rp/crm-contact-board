@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { FiBell, FiChevronDown, FiSearch } from "react-icons/fi";
 import styles from "./styles.module.css";
 
-function Header({ activeNav, contactsCount, onNavChange, search, onSearchChange, onToast }) {
+const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange, onToast }) => {
     const [searchOpen, setSearchOpen] = useState(false);
     const searchRef = useRef(null);
 
@@ -103,6 +103,6 @@ function Header({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                 </div>
             </header>
     );
-}
+};
 
 export default Header;
