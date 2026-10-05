@@ -1,104 +1,119 @@
-
 .followup-item {
     min-height: 47px;
     display: flex;
     align-items: center;
     gap: 10px;
     border-bottom: 1px solid #eff2ee;
-}
-.follow-date {
-    width: 29px;
-    height: 34px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    background: #f4f6f1;
-    color: #758574;
-}
-.follow-date strong {
-    font-size: 11px;
-    line-height: 1;
-}
-.follow-date small {
-    margin-top: 3px;
-    font-size: 6px;
-    font-weight: 750;
-}
-.follow-date.today {
-    background: #eff4dc;
-    color: #788d53;
-}
-.followup-person {
-    min-width: 0;
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
-    border: 0;
-    background: transparent;
-    text-align: left;
-    cursor: pointer;
-}
-.followup-person strong {
-    color: #425548;
-    font-size: 9px;
-    font-weight: 700;
-}
-.followup-person span {
-    overflow: hidden;
-    max-width: 260px;
-    color: #929d94;
-    font-size: 8px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.followup-person i {
-    padding: 0 3px;
-    color: #bdc6bc;
-    font-style: normal;
-}
-.follow-relative {
-    color: #879488;
-    font-size: 8px;
-    white-space: nowrap;
-}
-.follow-relative.is-today {
-    color: #a88557;
-}
-.done-button {
-    width: 25px;
-    height: 25px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #e5ebe1;
-    border-radius: 50%;
-    background: white;
-    color: #7e9a6c;
-    cursor: pointer;
-    transition:
-        border-color 180ms ease,
-        box-shadow 180ms ease;
-}
-.done-button:hover {
-    border-color: #aebf9f;
-    box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
-}
-.done-button svg {
-    width: 12px;
-    height: 12px;
-}
-@media (max-width: 760px) {
-    .followup-item {
-        gap: 7px;
+
+    .follow-date {
+        width: 29px;
+        height: 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background: #f4f6f1;
+        color: #758574;
+
+        strong {
+            font-size: 11px;
+            line-height: 1;
+        }
+
+        small {
+            margin-top: 3px;
+            font-size: 6px;
+            font-weight: 750;
+        }
+
+        &.today {
+            background: #eff4dc;
+            color: #788d53;
+        }
     }
-    .followup-person span {
-        max-width: 155px;
-        font-size: 7px;
+
+    .followup-person {
+        min-width: 0;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        border: 0;
+        background: transparent;
+        text-align: left;
+        cursor: pointer;
+
+        strong {
+            color: #425548;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        span {
+            overflow: hidden;
+            max-width: 260px;
+            color: #929d94;
+            font-size: 8px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            i {
+                padding: 0 3px;
+                color: #bdc6bc;
+                font-style: normal;
+            }
+        }
     }
+
     .follow-relative {
-        font-size: 7px;
+        color: #879488;
+        font-size: 8px;
+        white-space: nowrap;
+
+        &.is-today {
+            color: #a88557;
+        }
+    }
+
+    .done-button {
+        width: 25px;
+        height: 25px;
+        display: grid;
+        place-items: center;
+        border: 1px solid #e5ebe1;
+        border-radius: 50%;
+        background: white;
+        color: #7e9a6c;
+        cursor: pointer;
+        transition:
+            border-color 180ms ease,
+            box-shadow 180ms ease;
+
+        &:hover {
+            border-color: #aebf9f;
+            box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
+        }
+
+        svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        gap: 7px;
+
+        .followup-person {
+            span {
+                max-width: 155px;
+                font-size: 7px;
+            }
+        }
+
+        .follow-relative {
+            font-size: 7px;
+        }
     }
 }

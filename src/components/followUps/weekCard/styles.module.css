@@ -1,4 +1,3 @@
-
 .week-card {
     min-height: 242px;
     display: flex;
@@ -8,136 +7,158 @@
     border: 1px solid #e2e9d9;
     border-radius: 9px;
     background: #eaf0df;
-}
-.week-card-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.week-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #7d8c71;
-    font-size: 7px;
-    font-weight: 750;
-    letter-spacing: 0.11em;
-}
-.week-badge svg {
-    width: 12px;
-    height: 12px;
-}
-.week-spark {
-    height: 26px;
-    display: flex;
-    align-items: end;
-    gap: 3px;
-}
-.week-spark i {
-    width: 4px;
-    border-radius: 3px 3px 0 0;
-    background: #b6cc8c;
-}
-.week-spark i:nth-child(1) {
-    height: 9px;
-}
-.week-spark i:nth-child(2) {
-    height: 17px;
-}
-.week-spark i:nth-child(3) {
-    height: 12px;
-}
-.week-spark i:nth-child(4) {
-    height: 22px;
-}
-.week-spark i:nth-child(5) {
-    height: 15px;
-}
-.week-spark i:nth-child(6) {
-    height: 25px;
-    background: #8ba666;
-}
-.week-spark i:nth-child(7) {
-    height: 18px;
-}
-.week-count {
-    margin-top: 18px;
-    color: #405a42;
-    font-family: "DM Serif Display", Georgia, serif;
-    font-size: 44px;
-    letter-spacing: -1.8px;
-    line-height: 1;
-}
-.week-count span {
-    margin-left: 8px;
-    color: #82927d;
-    font-family: "DM Sans", sans-serif;
-    font-size: 10px;
-    font-weight: 550;
-    letter-spacing: 0;
-}
-.week-card > p {
-    max-width: 225px;
-    margin-top: 8px;
-    color: #778771;
-    font-family: "DM Serif Display", Georgia, serif;
-    font-size: 16px;
-    line-height: 1.25;
-}
-.week-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-    padding-top: 13px;
-    border-top: 1px solid #d8e2ce;
-    color: #7a8b74;
-    font-size: 8px;
-}
-.week-bottom > span {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.week-bottom > span i {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #8fac68;
-}
-.week-bottom button {
-    width: 25px;
-    height: 25px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #d5e0ca;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.45);
-    color: #71866a;
-    cursor: pointer;
-    transition:
-        border-color 180ms ease,
-        box-shadow 180ms ease;
-}
-.week-bottom button:hover {
-    border-color: #aebf9f;
-    box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
-}
-.week-bottom button svg {
-    width: 13px;
-    height: 13px;
-}
-@media (max-width: 760px) {
-    .week-card {
+
+    .week-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .week-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #7d8c71;
+            font-size: 7px;
+            font-weight: 750;
+            letter-spacing: 0.11em;
+
+            svg {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        .week-spark {
+            height: 26px;
+            display: flex;
+            align-items: end;
+            gap: 3px;
+
+            i {
+                width: 4px;
+                border-radius: 3px 3px 0 0;
+                background: #b6cc8c;
+
+                &:nth-child(1) {
+                    height: 9px;
+                }
+
+                &:nth-child(2) {
+                    height: 17px;
+                }
+
+                &:nth-child(3) {
+                    height: 12px;
+                }
+
+                &:nth-child(4) {
+                    height: 22px;
+                }
+
+                &:nth-child(5) {
+                    height: 15px;
+                }
+
+                &:nth-child(6) {
+                    height: 25px;
+                    background: #8ba666;
+                }
+
+                &:nth-child(7) {
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    .week-count {
+        margin-top: 18px;
+        color: #405a42;
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 44px;
+        letter-spacing: -1.8px;
+        line-height: 1;
+
+        span {
+            margin-left: 8px;
+            color: #82927d;
+            font-family: "DM Sans", sans-serif;
+            font-size: 10px;
+            font-weight: 550;
+            letter-spacing: 0;
+        }
+    }
+
+    > p {
+        max-width: 225px;
+        margin-top: 8px;
+        color: #778771;
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .week-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 13px;
+        border-top: 1px solid #d8e2ce;
+        color: #7a8b74;
+        font-size: 8px;
+
+        > span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            i {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #8fac68;
+            }
+        }
+
+        button {
+            width: 25px;
+            height: 25px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #d5e0ca;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.45);
+            color: #71866a;
+            cursor: pointer;
+            transition:
+                border-color 180ms ease,
+                box-shadow 180ms ease;
+
+            &:hover {
+                border-color: #aebf9f;
+                box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
+            }
+
+            svg {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    }
+
+    @media (max-width: 760px) {
         min-height: 180px;
         padding: 15px;
-    }
-    .week-count {
-        margin-top: 10px;
-        font-size: 38px;
-    }
-    .week-card > p {
-        max-width: 250px;
-        font-size: 14px;
+
+        .week-count {
+            margin-top: 10px;
+            font-size: 38px;
+        }
+
+        > p {
+            max-width: 250px;
+            font-size: 14px;
+        }
     }
 }

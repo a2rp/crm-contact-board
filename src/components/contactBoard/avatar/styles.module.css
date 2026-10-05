@@ -9,47 +9,45 @@
     color: #5b7259;
     font-size: 9px;
     font-weight: 750;
-}
 
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.avatar-lavender {
-    background: #ece8f1;
-    color: #766c8b;
-}
+    &.avatar-lavender {
+        background: #ece8f1;
+        color: #766c8b;
+    }
 
-.avatar-peach {
-    background: #f5e5d9;
-    color: #a57353;
-}
+    &.avatar-peach {
+        background: #f5e5d9;
+        color: #a57353;
+    }
 
-.avatar-mint {
-    background: #e3ede1;
-    color: #5d785e;
-}
+    &.avatar-mint {
+        background: #e3ede1;
+        color: #5d785e;
+    }
 
-.avatar-blue {
-    background: #e1eaf0;
-    color: #607e8e;
-}
+    &.avatar-blue {
+        background: #e1eaf0;
+        color: #607e8e;
+    }
 
-.avatar-yellow {
-    background: #f0efd7;
-    color: #8a8750;
-}
+    &.avatar-yellow {
+        background: #f0efd7;
+        color: #8a8750;
+    }
 
-.avatar-small {
-    width: 30px;
-    height: 30px;
-    font-size: 8px;
-}
+    &.avatar-small {
+        width: 30px;
+        height: 30px;
+        font-size: 8px;
+    }
 
-@media (max-width: 760px) {
-    .avatar {
+    @media (max-width: 760px) {
         width: 29px;
         height: 29px;
     }
