@@ -28,4 +28,10 @@ npm run build
 npm run preview
 ```
 
-The production site is published from the `main` branch through GitHub Pages Actions.
+## Deploy to GitHub Pages
+
+```sh
+npm run deploy
+```
+
+The `predeploy` script builds the app first. The deploy command publishes `dist` to the `gh-pages` branch. Set the repository Pages source to `gh-pages` and `/(root)`.
