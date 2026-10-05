@@ -1,6 +1,4 @@
-
-
-.root:global(.site-footer) {
+﻿.root:global(.site-footer) {
     min-height: 59px;
     display: flex;
     align-items: center;
@@ -9,11 +7,13 @@
     margin-top: 12px;
     border-top: 1px solid #e5eae2;
 }
+
 .root :global(.footer-credit) {
     display: flex;
     align-items: center;
     gap: 9px;
 }
+
 .root :global(.footer-logo) {
     display: inline-flex;
     flex: 0 0 auto;
@@ -23,16 +23,19 @@
     border-radius: 4px;
     box-shadow: 0 0 0 1px rgba(36, 50, 41, 0.08);
 }
+
 .root :global(.footer-logo img) {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .root :global(.footer-credit p) {
     color: #96a097;
     font-size: 8px;
 }
+
 .root :global(.footer-credit p a) {
     color: #637667;
     font-weight: 700;
@@ -40,12 +43,14 @@
     text-decoration-color: #c4d0bd;
     text-underline-offset: 2px;
 }
+
 .root :global(.footer-links) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 13px;
 }
+
 .root :global(.footer-links a) {
     display: inline-flex;
     align-items: center;
@@ -59,24 +64,33 @@
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
+
 .root :global(.footer-links a:hover) {
     border-color: #bdcbb6;
     box-shadow: 0 1px 0 #bdcbb6;
 }
+
 .root :global(.footer-links svg) {
     width: 10px;
     height: 10px;
 }
+
+@media (max-width: 1100px) {
     .root :global(.footer-links) {
         gap: 8px;
     }
+
     .root :global(.footer-links a span) {
         display: none;
     }
+
     .root :global(.footer-links svg) {
         width: 13px;
         height: 13px;
     }
+}
+
+@media (max-width: 760px) {
     .root:global(.site-footer) {
         align-items: flex-start;
         flex-direction: column-reverse;
@@ -84,26 +98,33 @@
         gap: 8px;
         padding: 13px 0 0;
     }
+
     .root :global(.footer-links) {
         width: 100%;
         justify-content: space-between;
         gap: 8px;
     }
+
     .root :global(.footer-links a) {
         padding-bottom: 4px;
     }
+
     .root :global(.footer-links svg) {
         width: 12px;
         height: 12px;
     }
+
     .root :global(.footer-credit) {
         gap: 8px;
     }
+
     .root :global(.footer-logo) {
         width: 39px;
         height: 28px;
     }
+
     .root :global(.footer-credit p) {
         padding-bottom: 3px;
         font-size: 7px;
     }
+}
