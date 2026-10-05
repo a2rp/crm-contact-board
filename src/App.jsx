@@ -15,7 +15,6 @@ import {
     FiSliders,
     FiUsers,
 } from "react-icons/fi";
-import { stageList } from "./data/contacts.js";
 import {
     dateLabel,
     dateToday,
@@ -30,6 +29,7 @@ import Footer from "./components/Footer/index.jsx";
 import ContactModal from "./components/ContactModal/index.jsx";
 import Header from "./components/Header/index.jsx";
 import Overview from "./components/Overview/index.jsx";
+import ContactBoard from "./components/ContactBoard/index.jsx";
 import "./App.css";
 
 function App() {
@@ -199,224 +199,34 @@ function App() {
                     onToast={setToast}
                 />
 
-                <section className="board-section" id="contacts">
-                    <div className="section-heading">
-                        <div className="section-title-wrap">
-                            <div className="section-icon">
-                                <FiUsers />
-                            </div>
-                            <div>
-                                <div className="eyebrow">YOUR PEOPLE</div>
-                                <h2>
-                                    Relationship board
-                                    <span className="heading-period">.</span>
-                                </h2>
-                            </div>
-                            <span className="contact-total">
-                                {filteredContacts.length} contacts
-                            </span>
-                        </div>
-                        <div className="board-controls">
-                            <label className="filter-select">
-                                <FiFilter />
-                                <select
-                                    aria-label="Filter by stage"
-                                    value={activeStage}
-                                    onChange={(event) =>
-                                        setActiveStage(event.target.value)
-                                    }
-                                >
-                                    <option>All stages</option>
-                                    {stageList.map((stage) => (
-                                        <option key={stage}>{stage}</option>
-                                    ))}
-                                </select>
-                                <FiChevronDown />
-                            </label>
-                            <div
-                                className="view-toggle"
-                                role="group"
-                                aria-label="Board display"
-                            >
-                                <button
-                                    type="button"
-                                    className={
-                                        view === "board" ? "selected" : ""
-                                    }
-                                    onClick={() => setView("board")}
-                                    aria-label="Board view"
-                                >
-                                    <FiGrid />
-                                </button>
-                                <button
-                                    type="button"
-                                    className={
-                                        view === "list" ? "selected" : ""
-                                    }
-                                    onClick={() => setView("list")}
-                                    aria-label="List view"
-                                >
-                                    <FiSliders />
-                                </button>
-                            </div>
-                            <button
-                                className="icon-button export-button"
-                                type="button"
-                                onClick={exportContacts}
-                                aria-label="Export contacts"
-                            >
-                                <FiDownload />
-                            </button>
-                        </div>
-                    </div>
-
-                    {view === "board" ? (
-                        <div className="kanban-board">
-                            {stageList.map((stage, index) => {
-                                const inStage = filteredContacts.filter(
-                                    (contact) => contact.stage === stage,
-                                );
-                                return (
-                                    <section
-                                        className={`kanban-column column-${index + 1}`}
-                                        key={stage}
-                                        aria-label={`${stage} contacts`}
-                                    >
-                                        <div className="column-heading">
-                                            <span className="column-marker" />
-                                            <h3>{stage}</h3>
-                                            <span className="column-count">
-                                                {inStage.length}
-                                            </span>
-                                            <button
-                                                type="button"
-                                                className="column-menu"
-                                                aria-label={`${stage} options`}
-                                                onClick={() =>
-                                                    setToast(
-                                                        `${stage} contacts are organized below`,
-                                                    )
-                                                }
-                                            >
-                                                <FiMoreHorizontal />
-                                            </button>
-                                        </div>
-                                        <div className="column-cards">
-                                            {inStage.length ? (
-                                                inStage.map((contact) => (
-                                                    <ContactCard
-                                                        key={contact.id}
-                                                        contact={contact}
-                                                        onOpen={openContact}
-                                                    />
-                                                ))
-                                            ) : (
-                                                <p className="empty-stage">
-                                                    No contacts here yet
-                                                </p>
-                                            )}
-                                            <button
-                                                className="add-to-stage"
-                                                type="button"
-                                                onClick={() => {
-                                                    setModalContact({
-                                                        stage,
-                                                        id: `c-${Date.now()}`,
-                                                        name: "",
-                                                        role: "",
-                                                        company: "",
-                                                        email: "",
-                                                        phone: "",
-                                                        tags: [],
-                                                        nextFollowUp:
-                                                            isoDate(3),
-                                                        lastContact: isoDate(),
-                                                        notes: "",
-                                                        owner: "You",
-                                                        color: "mint",
-                                                    });
-                                                    setModalOpen(true);
-                                                }}
-                                            >
-                                                <FiPlus /> Add a person
-                                            </button>
-                                        </div>
-                                    </section>
-                                );
-                            })}
-                        </div>
-                    ) : (
-                        <div className="contact-table-wrap">
-                            <table className="contact-table">
-                                <thead>
-                                    <tr>
-                                        <th>Person</th>
-                                        <th>Company</th>
-                                        <th>Stage</th>
-                                        <th>Next follow-up</th>
-                                        <th aria-label="Actions" />
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {filteredContacts.map((contact) => (
-                                        <tr
-                                            key={contact.id}
-                                            onClick={() => openContact(contact)}
-                                        >
-                                            <td>
-                                                <span className="table-person">
-                                                    <Avatar
-                                                        contact={contact}
-                                                        size="small"
-                                                    />
-                                                    <span>
-                                                        <strong>
-                                                            {contact.name}
-                                                        </strong>
-                                                        <small>
-                                                            {contact.role}
-                                                        </small>
-                                                    </span>
-                                                </span>
-                                            </td>
-                                            <td>{contact.company}</td>
-                                            <td>
-                                                <span
-                                                    className={`stage-pill stage-${contact.stage.toLowerCase()}`}
-                                                >
-                                                    {contact.stage}
-                                                </span>
-                                            </td>
-                                            <td>
-                                                {dateLabel(
-                                                    contact.nextFollowUp,
-                                                )}{" "}
-                                                <small className="table-relative">
-                                                    {relativeDate(
-                                                        contact.nextFollowUp,
-                                                    )}
-                                                </small>
-                                            </td>
-                                            <td>
-                                                <FiChevronRight />
-                                            </td>
-                                        </tr>
-                                    ))}
-                                    {!filteredContacts.length && (
-                                        <tr>
-                                            <td
-                                                colSpan="5"
-                                                className="no-results"
-                                            >
-                                                No people match that search yet.
-                                            </td>
-                                        </tr>
-                                    )}
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
-                </section>
+                <ContactBoard
+                    filteredContacts={filteredContacts}
+                    activeStage={activeStage}
+                    onStageChange={setActiveStage}
+                    view={view}
+                    onViewChange={setView}
+                    onExport={exportContacts}
+                    onOpenContact={openContact}
+                    onAddToStage={(stage) => {
+                        setModalContact({
+                            stage,
+                            id: "c-" + Date.now(),
+                            name: "",
+                            role: "",
+                            company: "",
+                            email: "",
+                            phone: "",
+                            tags: [],
+                            nextFollowUp: isoDate(3),
+                            lastContact: isoDate(),
+                            notes: "",
+                            owner: "You",
+                            color: "mint",
+                        });
+                        setModalOpen(true);
+                    }}
+                    onToast={setToast}
+                />
 
                 <section className="bottom-grid" id="follow-ups">
                     <article className="followup-panel">
