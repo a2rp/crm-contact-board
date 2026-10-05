@@ -1,11 +1,10 @@
 import { FiCalendar, FiPlus } from "react-icons/fi";
 import { relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
-import classNames from "../../../utils/classNames.js";
 
 const WeekCard = ({ thisWeek, upcoming, onAddContact }) => {
     return (
-<article className={classNames(styles.root, styles["week-card"])}>
+<article className={styles["week-card"]}>
                         <div className={styles["week-card-top"]}>
                             <span className={styles["week-badge"]}>
                                 <FiCalendar /> WEEKLY RHYTHM

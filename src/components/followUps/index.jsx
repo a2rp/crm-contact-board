@@ -3,11 +3,10 @@ import FollowUpItem from "./followUpItem/index.jsx";
 import WeekCard from "./weekCard/index.jsx";
 import styles from "./styles.module.css";
 import appStyles from "../../App.module.css";
-import classNames from "../../utils/classNames.js";
 
 const FollowUps = ({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onNavChange, onAddContact }) => {
     return (
-                <section className={classNames(styles.root, styles["bottom-grid"])} id="follow-ups">
+                <section className={styles["bottom-grid"]} id="follow-ups">
                     <article className={styles["followup-panel"]}>
                         <div className={styles["panel-heading"]}>
                             <div>

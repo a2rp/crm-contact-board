@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import classNames from "../../../utils/classNames.js";
 
 const Avatar = ({ contact, size = "regular" }) => {
     const initials = contact.name
@@ -9,12 +8,7 @@ const Avatar = ({ contact, size = "regular" }) => {
         .join("");
     return (
         <span
-            className={classNames(
-                styles.root,
-                styles.avatar,
-                styles[`avatar-${contact.color || "mint"}`],
-                styles[`avatar-${size}`],
-            )}
+            className={`${styles.avatar} ${styles[`avatar-${contact.color || "mint"}`]} ${styles[`avatar-${size}`]}`}
         >
             {contact.avatar ? <img src={contact.avatar} alt="" /> : initials}
         </span>

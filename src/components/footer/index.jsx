@@ -12,7 +12,6 @@ import {
 import { FiMail } from "react-icons/fi";
 import { currentYear } from "../../utils/dates.js";
 import styles from "./styles.module.css";
-import classNames from "../../utils/classNames.js";
 
 const footerLinks = [
     {
@@ -61,7 +60,7 @@ const footerLinks = [
 
 const Footer = () => {
     return (
-        <footer className={classNames(styles.root, styles["site-footer"])}>
+        <footer className={styles["site-footer"]}>
             <div className={styles["footer-credit"]}>
                 <a
                     className={styles["footer-logo"]}

@@ -1,5 +1,5 @@
 
-.root.toast-message {
+.toast-message {
     position: fixed;
     z-index: 60;
     right: 28px;
@@ -15,7 +15,7 @@
     color: #536957;
     font-size: 10px;
 }
-.root .toast-message > span {
+.toast-message > span {
     width: 22px;
     height: 22px;
     display: grid;
@@ -24,7 +24,7 @@
     background: #eef4e7;
     color: #76905c;
 }
-.root .toast-message svg {
+.toast-message svg {
     width: 13px;
     height: 13px;
 }

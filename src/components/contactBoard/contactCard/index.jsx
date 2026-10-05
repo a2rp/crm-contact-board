@@ -2,13 +2,12 @@ import { FiBriefcase, FiChevronRight, FiClock, FiMoreHorizontal } from "react-ic
 import Avatar from "../avatar/index.jsx";
 import { dateLabel, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
-import classNames from "../../../utils/classNames.js";
 
 const ContactCard = ({ contact, onOpen }) => {
     const due = relativeDate(contact.nextFollowUp);
     return (
         <button
-            className={classNames(styles.root, styles["contact-card"])}
+            className={styles["contact-card"]}
             type="button"
             onClick={() => onOpen(contact)}
             aria-label={`Open ${contact.name}`}
@@ -16,10 +15,7 @@ const ContactCard = ({ contact, onOpen }) => {
             <div className={styles["card-topline"]}>
                 <Avatar contact={contact} />
                 <span
-                    className={classNames(
-                        styles["follow-chip"],
-                        due.includes("overdue") && styles["is-overdue"],
-                    )}
+                    className={`${styles["follow-chip"]} ${due.includes("overdue") ? styles["is-overdue"] : ""}`}
                 >
                     <FiClock aria-hidden="true" /> {due}
                 </span>

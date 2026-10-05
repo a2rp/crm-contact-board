@@ -2,14 +2,13 @@ import { useRef, useState } from "react";
 import { FiBell, FiChevronDown, FiSearch } from "react-icons/fi";
 import styles from "./styles.module.css";
 import appStyles from "../../App.module.css";
-import classNames from "../../utils/classNames.js";
 
 const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange, onToast }) => {
     const [searchOpen, setSearchOpen] = useState(false);
     const searchRef = useRef(null);
 
     return (
-            <header className={classNames(styles.root, styles.topbar)}>
+            <header className={styles.topbar}>
                 <a
                     href="#overview"
                     className={styles["brand-lockup"]}
@@ -54,10 +53,7 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                 </nav>
                 <div className={styles["topbar-tools"]}>
                     <label
-                        className={classNames(
-                            styles["search-box"],
-                            searchOpen && styles["search-open"],
-                        )}
+                        className={`${styles["search-box"]} ${searchOpen ? styles["search-open"] : ""}`}
                         onClick={() => {
                             setSearchOpen(true);
                             requestAnimationFrame(() =>
@@ -79,7 +75,7 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                         <kbd>âŒ˜ K</kbd>
                     </label>
                     <button
-                        className={classNames(appStyles["icon-button"], styles["notification-button"])}
+                        className={`${appStyles["icon-button"]} ${styles["notification-button"]}`}
                         type="button"
                         aria-label="Show reminders"
                         onClick={() => {

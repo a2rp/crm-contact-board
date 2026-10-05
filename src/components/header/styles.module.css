@@ -1,6 +1,6 @@
 
 
-.root.topbar {
+.topbar {
     position: fixed;
     z-index: 20;
     inset: 0 0 auto;
@@ -13,13 +13,13 @@
     backdrop-filter: blur(16px);
 }
 
-.root .brand-lockup {
+.brand-lockup {
     display: flex;
     align-items: center;
     gap: 10px;
     min-width: 234px;
 }
-.root .brand-mark {
+.brand-mark {
     width: 27px;
     height: 27px;
     display: grid;
@@ -27,34 +27,34 @@
     gap: 3px;
     transform: rotate(-8deg);
 }
-.root .brand-mark i {
+.brand-mark i {
     display: block;
     border-radius: 4px 4px 2px 4px;
     background: var(--forest);
 }
-.root .brand-mark i:nth-child(2), .root .brand-mark i:nth-child(3) {
+.brand-mark i:nth-child(2), .brand-mark i:nth-child(3) {
     background: #a8c975;
 }
-.root .brand-mark i:nth-child(4) {
+.brand-mark i:nth-child(4) {
     background: var(--coral);
 }
-.root .brand-name {
+.brand-name {
     font-family: "DM Serif Display", Georgia, serif;
     font-size: 25px;
     letter-spacing: -1.3px;
     line-height: 1;
 }
-.root .brand-dot {
+.brand-dot {
     color: #a0bc61;
 }
 
-.root .main-nav {
+.main-nav {
     display: flex;
     align-items: stretch;
     height: 100%;
     gap: 32px;
 }
-.root .main-nav a {
+.main-nav a {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -64,7 +64,7 @@
     font-weight: 600;
     letter-spacing: 0.01em;
 }
-.root .main-nav a::after {
+.main-nav a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -73,13 +73,13 @@
     height: 2px;
     background: transparent;
 }
-.root .main-nav a.is-active {
+.main-nav a.is-active {
     color: var(--forest);
 }
-.root .main-nav a.is-active::after {
+.main-nav a.is-active::after {
     background: var(--forest);
 }
-.root .nav-count {
+.nav-count {
     display: inline-flex;
     min-width: 21px;
     height: 20px;
@@ -91,13 +91,13 @@
     font-size: 10px;
 }
 
-.root .topbar-tools {
+.topbar-tools {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-left: auto;
 }
-.root .search-box {
+.search-box {
     width: 274px;
     height: 39px;
     display: flex;
@@ -109,11 +109,11 @@
     color: #819087;
     background: #fafbf8;
 }
-.root .search-box > svg {
+.search-box > svg {
     width: 15px;
     flex: 0 0 auto;
 }
-.root .search-box input {
+.search-box input {
     width: 100%;
     min-width: 0;
     padding: 0;
@@ -123,10 +123,10 @@
     color: var(--ink);
     font-size: 11px;
 }
-.root .search-box input::placeholder {
+.search-box input::placeholder {
     color: #9ba59d;
 }
-.root .search-box kbd {
+.search-box kbd {
     white-space: nowrap;
     padding: 2px 5px;
     border: 1px solid #e4e8e1;
@@ -137,7 +137,7 @@
         9px "DM Sans",
         sans-serif;
 }
-.root .notification-button i {
+.notification-button i {
     position: absolute;
     top: 7px;
     right: 7px;
@@ -147,13 +147,13 @@
     border-radius: 50%;
     background: #e38e70;
 }
-.root .topbar-rule {
+.topbar-rule {
     width: 1px;
     height: 30px;
     margin: 0 1px;
     background: var(--line);
 }
-.root .profile-button {
+.profile-button {
     display: flex;
     align-items: center;
     gap: 9px;
@@ -164,11 +164,11 @@
     font-weight: 650;
     cursor: pointer;
 }
-.root .profile-button > svg {
+.profile-button > svg {
     width: 13px;
     color: #849088;
 }
-.root .profile-avatar {
+.profile-avatar {
     width: 31px;
     height: 31px;
     display: grid;
@@ -180,53 +180,53 @@
     font-weight: 750;
 }
 @media (max-width: 1100px) {
-    .root.topbar {
+    .topbar {
         padding-right: 22px;
         padding-left: 22px;
     }
-    .root .brand-lockup {
+    .brand-lockup {
         min-width: 175px;
     }
-    .root .main-nav {
+    .main-nav {
         gap: 21px;
     }
-    .root .search-box {
+    .search-box {
         width: 220px;
     }
 }
 @media (max-width: 760px) {
-    .root.topbar {
+    .topbar {
         height: 66px;
         padding: 0 16px;
     }
-    .root .brand-lockup {
+    .brand-lockup {
         min-width: auto;
         margin-right: auto;
     }
-    .root .brand-name {
+    .brand-name {
         font-size: 23px;
     }
-    .root .main-nav {
+    .main-nav {
         gap: 16px;
         height: 100%;
         margin-left: 20px;
     }
-    .root .main-nav a {
+    .main-nav a {
         font-size: 10px;
     }
-    .root .main-nav a:first-child {
+    .main-nav a:first-child {
         display: none;
     }
-    .root .nav-count {
+    .nav-count {
         min-width: 17px;
         height: 16px;
         font-size: 8px;
     }
-    .root .topbar-tools {
+    .topbar-tools {
         gap: 7px;
         margin-left: 17px;
     }
-    .root .search-box {
+    .search-box {
         width: 34px;
         height: 34px;
         justify-content: center;
@@ -234,13 +234,13 @@
         border-color: transparent;
         background: transparent;
     }
-    .root .search-box input, .root .search-box kbd {
+    .search-box input, .search-box kbd {
         display: none;
     }
-    .root .search-box > svg {
+    .search-box > svg {
         width: 18px;
     }
-    .root .search-box.search-open {
+    .search-box.search-open {
         position: absolute;
         right: 94px;
         width: min(220px, calc(100vw - 185px));
@@ -249,40 +249,40 @@
         border-color: #e3e9df;
         background: white;
     }
-    .root .search-box.search-open input {
+    .search-box.search-open input {
         display: block;
         font-size: 10px;
     }
-    .root .search-box.search-open > svg {
+    .search-box.search-open > svg {
         width: 15px;
     }
-    .root .notification-button {
+    .notification-button {
         width: 31px;
         height: 31px;
     }
-    .root .topbar-rule, .root .profile-name, .root .profile-button > svg {
+    .topbar-rule, .profile-name, .profile-button > svg {
         display: none;
     }
-    .root .profile-avatar {
+    .profile-avatar {
         width: 29px;
         height: 29px;
     }
-    .root .profile-button {
+    .profile-button {
         padding: 0;
     }
 }
 @media (max-width: 420px) {
-    .root.topbar {
+    .topbar {
         padding: 0 11px;
     }
-    .root .main-nav {
+    .main-nav {
         gap: 10px;
         margin-left: 12px;
     }
-    .root .main-nav a {
+    .main-nav a {
         font-size: 9px;
     }
-    .root .topbar-tools {
+    .topbar-tools {
         gap: 4px;
         margin-left: 10px;
     }

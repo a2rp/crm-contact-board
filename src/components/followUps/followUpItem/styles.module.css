@@ -1,12 +1,12 @@
 
-.root.followup-item {
+.followup-item {
     min-height: 47px;
     display: flex;
     align-items: center;
     gap: 10px;
     border-bottom: 1px solid #eff2ee;
 }
-.root .follow-date {
+.follow-date {
     width: 29px;
     height: 34px;
     display: flex;
@@ -17,20 +17,20 @@
     background: #f4f6f1;
     color: #758574;
 }
-.root .follow-date strong {
+.follow-date strong {
     font-size: 11px;
     line-height: 1;
 }
-.root .follow-date small {
+.follow-date small {
     margin-top: 3px;
     font-size: 6px;
     font-weight: 750;
 }
-.root .follow-date.today {
+.follow-date.today {
     background: #eff4dc;
     color: #788d53;
 }
-.root .followup-person {
+.followup-person {
     min-width: 0;
     display: flex;
     flex: 1 1 auto;
@@ -42,12 +42,12 @@
     text-align: left;
     cursor: pointer;
 }
-.root .followup-person strong {
+.followup-person strong {
     color: #425548;
     font-size: 9px;
     font-weight: 700;
 }
-.root .followup-person span {
+.followup-person span {
     overflow: hidden;
     max-width: 260px;
     color: #929d94;
@@ -55,20 +55,20 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-.root .followup-person i {
+.followup-person i {
     padding: 0 3px;
     color: #bdc6bc;
     font-style: normal;
 }
-.root .follow-relative {
+.follow-relative {
     color: #879488;
     font-size: 8px;
     white-space: nowrap;
 }
-.root .follow-relative.is-today {
+.follow-relative.is-today {
     color: #a88557;
 }
-.root .done-button {
+.done-button {
     width: 25px;
     height: 25px;
     display: grid;
@@ -82,23 +82,23 @@
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
-.root .done-button:hover {
+.done-button:hover {
     border-color: #aebf9f;
     box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
 }
-.root .done-button svg {
+.done-button svg {
     width: 12px;
     height: 12px;
 }
 @media (max-width: 760px) {
-    .root.followup-item {
+    .followup-item {
         gap: 7px;
     }
-    .root .followup-person span {
+    .followup-person span {
         max-width: 155px;
         font-size: 7px;
     }
-    .root .follow-relative {
+    .follow-relative {
         font-size: 7px;
     }
 }

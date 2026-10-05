@@ -1,5 +1,5 @@
 
-.root .panel-heading h2 {
+.panel-heading h2 {
     color: var(--ink);
     font-family: "DM Serif Display", Georgia, serif;
     font-size: 22px;
@@ -8,34 +8,34 @@
     line-height: 1;
 }
 
-.root.bottom-grid {
+.bottom-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.65fr) minmax(245px, 0.8fr);
     gap: 14px;
     margin-top: 32px;
     scroll-margin-top: 96px;
 }
-.root .followup-panel {
+.followup-panel {
     min-height: 242px;
     padding: 18px 20px 0;
     border: 1px solid #e4eae0;
     border-radius: 9px;
     background: white;
 }
-.root .panel-heading {
+.panel-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 11px;
 }
-.root .panel-heading > div > div:first-child {
+.panel-heading > div > div:first-child {
     margin-bottom: 5px;
     font-size: 7px;
 }
-.root .panel-heading h2 {
+.panel-heading h2 {
     font-size: 21px;
 }
-.root .text-button {
+.text-button {
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -50,19 +50,19 @@
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
-.root .text-button:hover {
+.text-button:hover {
     border-color: #cbd8c7;
     box-shadow: 0 3px 9px rgba(44, 68, 52, 0.07);
 }
-.root .text-button svg {
+.text-button svg {
     width: 12px;
     height: 12px;
 }
-.root .followup-list {
+.followup-list {
     display: flex;
     flex-direction: column;
 }
-.root .panel-footer-link {
+.panel-footer-link {
     min-height: 36px;
     display: flex;
     align-items: center;
@@ -71,20 +71,20 @@
     font-size: 8px;
     font-weight: 650;
 }
-.root .panel-footer-link svg {
+.panel-footer-link svg {
     width: 13px;
     height: 13px;
 }
 @media (max-width: 760px) {
-    .root .panel-heading h2 {
+    .panel-heading h2 {
         font-size: 19px;
     }
-    .root.bottom-grid {
+    .bottom-grid {
         grid-template-columns: 1fr;
         gap: 9px;
         margin-top: 23px;
     }
-    .root .followup-panel {
+    .followup-panel {
         min-height: 225px;
         padding: 15px 12px 0;
     }

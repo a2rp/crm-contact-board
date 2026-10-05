@@ -1,4 +1,4 @@
-.root.app-shell {
+.app-shell {
     min-height: 100vh;
     color: var(--ink);
     background: var(--paper);
@@ -9,11 +9,11 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.root .heading-period {
+.heading-period {
     color: #a0bc61;
 }
 
-.root .icon-button {
+.icon-button {
     width: 36px;
     height: 36px;
     display: inline-flex;
@@ -30,29 +30,23 @@
         box-shadow 180ms ease;
 }
 
-.root .icon-button:hover {
+.icon-button:hover {
     border-color: #dce4d8;
     box-shadow: 0 3px 10px rgba(44, 68, 52, 0.08);
 }
 
-.root .icon-button svg {
+.icon-button svg {
     width: 17px;
     height: 17px;
 }
 
-.root .page-content {
+.page-content {
     max-width: 1452px;
     margin: 0 auto;
     padding: 112px 34px 30px;
 }
 
-.root h2,
-.root h3,
-.root p {
-    margin: 0;
-}
-
-.root .button {
+.button {
     min-height: 40px;
     display: inline-flex;
     align-items: center;
@@ -69,44 +63,44 @@
         box-shadow 180ms ease;
 }
 
-.root .button svg {
+.button svg {
     width: 15px;
     height: 15px;
 }
 
-.root .button-primary {
+.button-primary {
     border-color: var(--forest);
     background: var(--forest);
     color: white;
 }
 
-.root .button-primary:hover {
+.button-primary:hover {
     border-color: #426852;
     box-shadow: 0 5px 14px rgba(42, 69, 53, 0.2);
 }
 
 @media (min-width: 1500px) {
-    .root .page-content {
+    .page-content {
         padding-right: 0;
         padding-left: 0;
     }
 }
 
 @media (max-width: 1100px) {
-    .root .page-content {
+    .page-content {
         padding-right: 22px;
         padding-left: 22px;
     }
 }
 
 @media (max-width: 760px) {
-    .root .page-content {
+    .page-content {
         padding: 93px 16px 18px;
     }
 }
 
 @media (max-width: 420px) {
-    .root .page-content {
+    .page-content {
         padding-right: 11px;
         padding-left: 11px;
     }

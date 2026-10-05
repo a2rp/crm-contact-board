@@ -1,10 +1,9 @@
 import { FiHeart } from "react-icons/fi";
 import styles from "./styles.module.css";
-import classNames from "../../utils/classNames.js";
 
 const ClosingNote = () => {
     return (
-                <div className={classNames(styles.root, styles["closing-note"])}>
+                <div className={styles["closing-note"]}>
                     <span className={styles["closing-icon"]}>
                         <FiHeart />
                     </span>

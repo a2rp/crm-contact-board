@@ -10,7 +10,6 @@ import FollowUps from "./components/followUps/index.jsx";
 import ClosingNote from "./components/closingNote/index.jsx";
 import Toast from "./components/toast/index.jsx";
 import styles from "./App.module.css";
-import classNames from "./utils/classNames.js";
 
 const App = () => {
     const [contacts, setContacts] = useState(readContacts);
@@ -155,7 +154,7 @@ const App = () => {
         .sort((a, b) => a.nextFollowUp.localeCompare(b.nextFollowUp))
         .slice(0, 4);
     return (
-        <div className={classNames(styles.root, styles["app-shell"])}>
+        <div className={styles["app-shell"]}>
             <Header
                 activeNav={activeNav}
                 contactsCount={contacts.length}

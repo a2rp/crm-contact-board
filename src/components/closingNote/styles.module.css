@@ -1,6 +1,6 @@
 
 
-.root.closing-note {
+.closing-note {
     min-height: 65px;
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
     border-radius: 8px;
     background: #fafbf8;
 }
-.root .closing-icon {
+.closing-icon {
     width: 27px;
     height: 27px;
     display: grid;
@@ -20,20 +20,20 @@
     background: #f1f4e7;
     color: #9aad6f;
 }
-.root .closing-icon svg {
+.closing-icon svg {
     width: 13px;
     height: 13px;
 }
-.root .closing-note p {
+.closing-note p {
     color: #8d998e;
     font-family: "DM Serif Display", Georgia, serif;
     font-size: 13px;
 }
-.root .closing-note p strong {
+.closing-note p strong {
     color: #5e715e;
     font-weight: 400;
 }
-.root .closing-stamp {
+.closing-stamp {
     display: flex;
     align-items: center;
     gap: 7px;
@@ -43,22 +43,22 @@
     font-weight: 750;
     letter-spacing: 0.11em;
 }
-.root .closing-stamp i {
+.closing-stamp i {
     color: #a8bd78;
     font-size: 12px;
     font-style: normal;
 }
 @media (max-width: 760px) {
-    .root.closing-note {
+    .closing-note {
         min-height: 58px;
         gap: 8px;
         margin-top: 14px;
         padding: 0 10px;
     }
-    .root .closing-note p {
+    .closing-note p {
         font-size: 11px;
     }
-    .root .closing-stamp {
+    .closing-stamp {
         display: none;
     }
 }

@@ -4,7 +4,6 @@ import { stageList } from "../../data/contacts.js";
 import { isoDate } from "../../utils/dates.js";
 import styles from "./styles.module.css";
 import appStyles from "../../App.module.css";
-import classNames from "../../utils/classNames.js";
 
 const ContactModal = ({ contact, onClose, onSave }) => {
     const isExisting = Boolean(contact?.name);
@@ -48,7 +47,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
 
     return (
         <div
-            className={classNames(styles.root, styles["modal-scrim"])}
+            className={styles["modal-scrim"]}
             role="presentation"
             onMouseDown={(event) =>
                 event.target === event.currentTarget && onClose()
@@ -75,7 +74,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                     </div>
                     <button
                         type="button"
-                        className={classNames(appStyles["icon-button"], styles["close-button"])}
+                        className={`${appStyles["icon-button"]} ${styles["close-button"]}`}
                         onClick={onClose}
                         aria-label="Close"
                     >
@@ -84,7 +83,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                 </div>
                 <form onSubmit={submit}>
                     <div className={styles["modal-fields"]}>
-                        <label className={classNames(styles["field"], styles["full-field"])}>
+                        <label className={`${styles["field"]} ${styles["full-field"]}`}>
                             Full name
                             <input
                                 name="name"
@@ -152,7 +151,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 onChange={setField}
                             />
                         </label>
-                        <label className={classNames(styles["field"], styles["full-field"])}>
+                        <label className={`${styles["field"]} ${styles["full-field"]}`}>
                             Tags
                             <input
                                 value={tagsText}
@@ -162,7 +161,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                                 placeholder="Design, Referral"
                             />
                         </label>
-                        <label className={classNames(styles["field"], styles["full-field"])}>
+                        <label className={`${styles["field"]} ${styles["full-field"]}`}>
                             A note to remember
                             <textarea
                                 name="notes"
@@ -180,14 +179,14 @@ const ContactModal = ({ contact, onClose, onSave }) => {
                         <div>
                             <button
                                 type="button"
-                                className={classNames(appStyles["button"], styles["button-quiet"])}
+                                className={`${appStyles["button"]} ${styles["button-quiet"]}`}
                                 onClick={onClose}
                             >
                                 Cancel
                             </button>
                             <button
                                 type="submit"
-                                className={classNames(appStyles["button"], appStyles["button-primary"])}
+                                className={`${appStyles["button"]} ${appStyles["button-primary"]}`}
                             >
                                 {isExisting ? "Save changes" : "Add contact"}{" "}
                                 <FiArrowUpRight />

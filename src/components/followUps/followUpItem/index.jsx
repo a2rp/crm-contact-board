@@ -2,16 +2,12 @@ import { FiCheck } from "react-icons/fi";
 import Avatar from "../../contactBoard/avatar/index.jsx";
 import { isoDate, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
-import classNames from "../../../utils/classNames.js";
 
 const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
     return (
-<div className={classNames(styles.root, styles["followup-item"])}>
+<div className={styles["followup-item"]}>
                                     <span
-                                        className={classNames(
-                                            styles["follow-date"],
-                                            contact.nextFollowUp <= isoDate() && styles.today,
-                                        )}
+                                        className={`${styles["follow-date"]} ${contact.nextFollowUp <= isoDate() ? styles.today : ""}`}
                                     >
                                         <strong>
                                             {new Date(
@@ -41,10 +37,7 @@ const FollowUpItem = ({ contact, onOpenContact, onMarkDone }) => {
                                         </span>
                                     </button>
                                     <span
-                                        className={classNames(
-                                            styles["follow-relative"],
-                                            contact.nextFollowUp <= isoDate() && styles["is-today"],
-                                        )}
+                                        className={`${styles["follow-relative"]} ${contact.nextFollowUp <= isoDate() ? styles["is-today"] : ""}`}
                                     >
                                         {relativeDate(contact.nextFollowUp)}
                                     </span>
