@@ -129,7 +129,7 @@ const Overview = ({ contacts, dueToday, openRelationships, thisWeek, todayLabel,
                     </p>
                 </article>
                 <div className={styles["metric-note"]}>
-                    <span className={styles["note-mark"]}>â€œ</span>
+                    <span className={styles["note-mark"]}>{"\u201c"}</span>
                     <p>People remember how you make the follow-up feel.</p>
                     <span className={styles["note-attribution"]}>
                         A LITTLE REMINDER
