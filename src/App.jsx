@@ -9,7 +9,6 @@ import {
     FiDownload,
     FiFilter,
     FiGrid,
-    FiHeart,
     FiMoreHorizontal,
     FiPlus,
     FiSliders,
@@ -31,6 +30,7 @@ import Header from "./components/Header/index.jsx";
 import Overview from "./components/Overview/index.jsx";
 import ContactBoard from "./components/ContactBoard/index.jsx";
 import FollowUps from "./components/FollowUps/index.jsx";
+import ClosingNote from "./components/ClosingNote/index.jsx";
 import "./App.css";
 
 function App() {
@@ -242,18 +242,7 @@ function App() {
                     }}
                 />
 
-                <div className="closing-note">
-                    <span className="closing-icon">
-                        <FiHeart />
-                    </span>
-                    <p>
-                        Good relationships are built in the little moments.{" "}
-                        <strong>Keep showing up.</strong>
-                    </p>
-                    <span className="closing-stamp">
-                        KINFIELD NOTES <i>âœ³</i> NO. 01
-                    </span>
-                </div>
+                <ClosingNote />
                 <Footer />
             </main>
 

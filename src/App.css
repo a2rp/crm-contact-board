@@ -95,55 +95,6 @@ h2, h3, p {
     border-color: #426852;
     box-shadow: 0 5px 14px rgba(42, 69, 53, 0.2);
 }
-
-.closing-note {
-    min-height: 65px;
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    margin-top: 22px;
-    padding: 0 18px;
-    border: 1px solid #e8ece4;
-    border-radius: 8px;
-    background: #fafbf8;
-}
-.closing-icon {
-    width: 27px;
-    height: 27px;
-    display: grid;
-    place-items: center;
-    border-radius: 7px;
-    background: #f1f4e7;
-    color: #9aad6f;
-}
-.closing-icon svg {
-    width: 13px;
-    height: 13px;
-}
-.closing-note p {
-    color: #8d998e;
-    font-family: "DM Serif Display", Georgia, serif;
-    font-size: 13px;
-}
-.closing-note p strong {
-    color: #5e715e;
-    font-weight: 400;
-}
-.closing-stamp {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-left: auto;
-    color: #abb5a8;
-    font-size: 7px;
-    font-weight: 750;
-    letter-spacing: 0.11em;
-}
-.closing-stamp i {
-    color: #a8bd78;
-    font-size: 12px;
-    font-style: normal;
-}
 .toast-message {
     position: fixed;
     z-index: 60;
@@ -194,18 +145,6 @@ h2, h3, p {
     }
     .page-content {
         padding: 93px 16px 18px;
-    }
-    .closing-note {
-        min-height: 58px;
-        gap: 8px;
-        margin-top: 14px;
-        padding: 0 10px;
-    }
-    .closing-note p {
-        font-size: 11px;
-    }
-    .closing-stamp {
-        display: none;
     }
 }
 

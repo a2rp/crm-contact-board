@@ -1,0 +1,64 @@
+
+
+.root:global(.closing-note) {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 22px;
+    padding: 0 18px;
+    border: 1px solid #e8ece4;
+    border-radius: 8px;
+    background: #fafbf8;
+}
+.root :global(.closing-icon) {
+    width: 27px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: #f1f4e7;
+    color: #9aad6f;
+}
+.root :global(.closing-icon svg) {
+    width: 13px;
+    height: 13px;
+}
+.root :global(.closing-note p) {
+    color: #8d998e;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 13px;
+}
+.root :global(.closing-note p strong) {
+    color: #5e715e;
+    font-weight: 400;
+}
+.root :global(.closing-stamp) {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: auto;
+    color: #abb5a8;
+    font-size: 7px;
+    font-weight: 750;
+    letter-spacing: 0.11em;
+}
+.root :global(.closing-stamp i) {
+    color: #a8bd78;
+    font-size: 12px;
+    font-style: normal;
+}
+@media (max-width: 760px) {
+    .root:global(.closing-note) {
+        min-height: 58px;
+        gap: 8px;
+        margin-top: 14px;
+        padding: 0 10px;
+    }
+    .root :global(.closing-note p) {
+        font-size: 11px;
+    }
+    .root :global(.closing-stamp) {
+        display: none;
+    }
+}
