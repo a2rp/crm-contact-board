@@ -151,8 +151,7 @@ const App = () => {
     };
 
     const upcoming = [...contacts]
-        .sort((a, b) => a.nextFollowUp.localeCompare(b.nextFollowUp))
-        .slice(0, 4);
+        .sort((a, b) => a.nextFollowUp.localeCompare(b.nextFollowUp));
     return (
         <div className={styles["app-shell"]}>
             <Header
@@ -212,7 +211,6 @@ const App = () => {
                     thisWeek={thisWeek}
                     onOpenContact={openContact}
                     onMarkDone={markDone}
-                    onToast={setToast}
                     onNavChange={setActiveNav}
                     onAddContact={() => {
                         setModalContact(null);
