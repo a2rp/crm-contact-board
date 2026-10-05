@@ -72,7 +72,7 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
                                 if (!search) setSearchOpen(false);
                             }}
                         />
-                        <kbd>âŒ˜ K</kbd>
+                        <kbd>{"\u2318"} K</kbd>
                     </label>
                     <button
                         className={`${appStyles["icon-button"]} ${styles["notification-button"]}`}
