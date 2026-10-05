@@ -1,0 +1,56 @@
+﻿.root:global(.avatar) {
+    width: 33px;
+    height: 33px;
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    color: #5b7259;
+    font-size: 9px;
+    font-weight: 750;
+}
+
+.root :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.root:global(.avatar-lavender) {
+    background: #ece8f1;
+    color: #766c8b;
+}
+
+.root:global(.avatar-peach) {
+    background: #f5e5d9;
+    color: #a57353;
+}
+
+.root:global(.avatar-mint) {
+    background: #e3ede1;
+    color: #5d785e;
+}
+
+.root:global(.avatar-blue) {
+    background: #e1eaf0;
+    color: #607e8e;
+}
+
+.root:global(.avatar-yellow) {
+    background: #f0efd7;
+    color: #8a8750;
+}
+
+.root:global(.avatar-small) {
+    width: 30px;
+    height: 30px;
+    font-size: 8px;
+}
+
+@media (max-width: 760px) {
+    .root:global(.avatar) {
+        width: 29px;
+        height: 29px;
+    }
+}

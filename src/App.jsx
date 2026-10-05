@@ -3,12 +3,10 @@ import {
     FiArrowDownRight,
     FiArrowUpRight,
     FiBell,
-    FiBriefcase,
     FiCalendar,
     FiCheck,
     FiChevronDown,
     FiChevronRight,
-    FiClock,
     FiDownload,
     FiFilter,
     FiGrid,
@@ -42,6 +40,8 @@ import {
     relativeDate,
 } from "./utils/dates.js";
 import { readContacts } from "./utils/contactStorage.js";
+import Avatar from "./components/ContactBoard/Avatar/index.jsx";
+import ContactCard from "./components/ContactBoard/ContactCard/index.jsx";
 import "./App.css";
 
 const footerLinks = [
@@ -88,63 +88,6 @@ const footerLinks = [
         icon: <FaPatreon />,
     },
 ];
-
-function Avatar({ contact, size = "regular" }) {
-    const initials = contact.name
-        .split(" ")
-        .map((part) => part[0])
-        .slice(0, 2)
-        .join("");
-    return (
-        <span
-            className={`avatar avatar-${contact.color || "mint"} avatar-${size}`}
-        >
-            {contact.avatar ? <img src={contact.avatar} alt="" /> : initials}
-        </span>
-    );
-}
-
-function ContactCard({ contact, onOpen }) {
-    const due = relativeDate(contact.nextFollowUp);
-    return (
-        <button
-            className="contact-card"
-            type="button"
-            onClick={() => onOpen(contact)}
-            aria-label={`Open ${contact.name}`}
-        >
-            <div className="card-topline">
-                <Avatar contact={contact} />
-                <span
-                    className={`follow-chip ${due.includes("overdue") ? "is-overdue" : ""}`}
-                >
-                    <FiClock aria-hidden="true" /> {due}
-                </span>
-                <span className="card-more">
-                    <FiMoreHorizontal aria-hidden="true" />
-                </span>
-            </div>
-            <span className="contact-name">{contact.name}</span>
-            <span className="contact-role">{contact.role}</span>
-            <span className="company-line">
-                <FiBriefcase aria-hidden="true" /> {contact.company}
-            </span>
-            <span className="tag-row">
-                {contact.tags.slice(0, 2).map((tag) => (
-                    <span className="tag" key={tag}>
-                        {tag}
-                    </span>
-                ))}
-            </span>
-            <span className="card-divider" />
-            <span className="card-footline">
-                <span>Last touch</span>
-                <strong>{dateLabel(contact.lastContact)}</strong>
-                <FiChevronRight aria-hidden="true" />
-            </span>
-        </button>
-    );
-}
 
 function ContactModal({ contact, onClose, onSave }) {
     const isExisting = Boolean(contact?.name);
