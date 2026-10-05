@@ -2,7 +2,6 @@
 import {
     FiArrowDownRight,
     FiArrowUpRight,
-    FiBell,
     FiCalendar,
     FiCheck,
     FiChevronDown,
@@ -13,7 +12,6 @@ import {
     FiHeart,
     FiMoreHorizontal,
     FiPlus,
-    FiSearch,
     FiSliders,
     FiUsers,
 } from "react-icons/fi";
@@ -30,6 +28,7 @@ import Avatar from "./components/ContactBoard/Avatar/index.jsx";
 import ContactCard from "./components/ContactBoard/ContactCard/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import ContactModal from "./components/ContactModal/index.jsx";
+import Header from "./components/Header/index.jsx";
 import "./App.css";
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
     const [modalOpen, setModalOpen] = useState(false);
     const [toast, setToast] = useState("");
     const [activeNav, setActiveNav] = useState("overview");
-    const [searchOpen, setSearchOpen] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("kinfield-contacts", JSON.stringify(contacts));
@@ -177,102 +175,14 @@ function App() {
         .slice(0, 4);
     return (
         <div className="app-shell">
-            <header className="topbar">
-                <a
-                    href="#overview"
-                    className="brand-lockup"
-                    onClick={() => setActiveNav("overview")}
-                    aria-label="Kinfield home"
-                >
-                    <span className="brand-mark">
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                    </span>
-                    <span className="brand-name">
-                        kinfield<span className="brand-dot">.</span>
-                    </span>
-                </a>
-                <nav className="main-nav" aria-label="Main navigation">
-                    <a
-                        href="#overview"
-                        className={activeNav === "overview" ? "is-active" : ""}
-                        onClick={() => setActiveNav("overview")}
-                    >
-                        Overview
-                    </a>
-                    <a
-                        href="#contacts"
-                        className={activeNav === "contacts" ? "is-active" : ""}
-                        onClick={() => setActiveNav("contacts")}
-                    >
-                        Contacts{" "}
-                        <span className="nav-count">{contacts.length}</span>
-                    </a>
-                    <a
-                        href="#follow-ups"
-                        className={
-                            activeNav === "follow-ups" ? "is-active" : ""
-                        }
-                        onClick={() => setActiveNav("follow-ups")}
-                    >
-                        Follow-ups
-                    </a>
-                </nav>
-                <div className="topbar-tools">
-                    <label
-                        className={`search-box ${searchOpen ? "search-open" : ""}`}
-                        onClick={() => {
-                            setSearchOpen(true);
-                            requestAnimationFrame(() =>
-                                document
-                                    .querySelector(".search-box input")
-                                    ?.focus(),
-                            );
-                        }}
-                    >
-                        <FiSearch aria-hidden="true" />
-                        <input
-                            aria-label="Search contacts"
-                            placeholder="Search people, companies..."
-                            value={search}
-                            onChange={(event) => setSearch(event.target.value)}
-                            onBlur={() => {
-                                if (!search) setSearchOpen(false);
-                            }}
-                        />
-                        <kbd>âŒ˜ K</kbd>
-                    </label>
-                    <button
-                        className="icon-button notification-button"
-                        type="button"
-                        aria-label="Show reminders"
-                        onClick={() => {
-                            document
-                                .querySelector("#follow-ups")
-                                ?.scrollIntoView({ behavior: "smooth" });
-                            setActiveNav("follow-ups");
-                        }}
-                    >
-                        <FiBell />
-                        <i />
-                    </button>
-                    <span className="topbar-rule" />
-                    <button
-                        className="profile-button"
-                        type="button"
-                        onClick={() =>
-                            setToast("You are viewing your personal workspace")
-                        }
-                        aria-label="Your profile"
-                    >
-                        <span className="profile-avatar">AR</span>
-                        <span className="profile-name">Ashish</span>
-                        <FiChevronDown />
-                    </button>
-                </div>
-            </header>
+            <Header
+                activeNav={activeNav}
+                contactsCount={contacts.length}
+                onNavChange={setActiveNav}
+                search={search}
+                onSearchChange={setSearch}
+                onToast={setToast}
+            />
 
             <main className="page-content">
                 <section className="welcome-row" id="overview">

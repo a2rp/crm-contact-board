@@ -1,0 +1,289 @@
+
+
+.root:global(.topbar) {
+    position: fixed;
+    z-index: 20;
+    inset: 0 0 auto;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    padding: 0 max(34px, calc((100vw - 1452px) / 2));
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(16px);
+}
+
+.root :global(.brand-lockup) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 234px;
+}
+.root :global(.brand-mark) {
+    width: 27px;
+    height: 27px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    transform: rotate(-8deg);
+}
+.root :global(.brand-mark i) {
+    display: block;
+    border-radius: 4px 4px 2px 4px;
+    background: var(--forest);
+}
+.root :global(.brand-mark i:nth-child(2)), .root :global(.brand-mark i:nth-child(3)) {
+    background: #a8c975;
+}
+.root :global(.brand-mark i:nth-child(4)) {
+    background: var(--coral);
+}
+.root :global(.brand-name) {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 25px;
+    letter-spacing: -1.3px;
+    line-height: 1;
+}
+.root :global(.brand-dot) {
+    color: #a0bc61;
+}
+
+.root :global(.main-nav) {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    gap: 32px;
+}
+.root :global(.main-nav a) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    color: #79837b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+.root :global(.main-nav a::after) {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: transparent;
+}
+.root :global(.main-nav a.is-active) {
+    color: var(--forest);
+}
+.root :global(.main-nav a.is-active::after) {
+    background: var(--forest);
+}
+.root :global(.nav-count) {
+    display: inline-flex;
+    min-width: 21px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background: #f0f3eb;
+    color: #59695c;
+    font-size: 10px;
+}
+
+.root :global(.topbar-tools) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+.root :global(.search-box) {
+    width: 274px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 9px 0 12px;
+    border: 1px solid #e7ebe4;
+    border-radius: 8px;
+    color: #819087;
+    background: #fafbf8;
+}
+.root :global(.search-box > svg) {
+    width: 15px;
+    flex: 0 0 auto;
+}
+.root :global(.search-box input) {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 11px;
+}
+.root :global(.search-box input::placeholder) {
+    color: #9ba59d;
+}
+.root :global(.search-box kbd) {
+    white-space: nowrap;
+    padding: 2px 5px;
+    border: 1px solid #e4e8e1;
+    border-radius: 4px;
+    background: white;
+    color: #8c978e;
+    font:
+        9px "DM Sans",
+        sans-serif;
+}
+.root :global(.notification-button i) {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 5px;
+    height: 5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: #e38e70;
+}
+.root :global(.topbar-rule) {
+    width: 1px;
+    height: 30px;
+    margin: 0 1px;
+    background: var(--line);
+}
+.root :global(.profile-button) {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 3px 0 3px 3px;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+}
+.root :global(.profile-button > svg) {
+    width: 13px;
+    color: #849088;
+}
+.root :global(.profile-avatar) {
+    width: 31px;
+    height: 31px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e6edda;
+    color: #496347;
+    font-size: 10px;
+    font-weight: 750;
+}
+@media (max-width: 1100px) {
+    .root:global(.topbar) {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+    .root :global(.brand-lockup) {
+        min-width: 175px;
+    }
+    .root :global(.main-nav) {
+        gap: 21px;
+    }
+    .root :global(.search-box) {
+        width: 220px;
+    }
+}
+@media (max-width: 760px) {
+    .root:global(.topbar) {
+        height: 66px;
+        padding: 0 16px;
+    }
+    .root :global(.brand-lockup) {
+        min-width: auto;
+        margin-right: auto;
+    }
+    .root :global(.brand-name) {
+        font-size: 23px;
+    }
+    .root :global(.main-nav) {
+        gap: 16px;
+        height: 100%;
+        margin-left: 20px;
+    }
+    .root :global(.main-nav a) {
+        font-size: 10px;
+    }
+    .root :global(.main-nav a:first-child) {
+        display: none;
+    }
+    .root :global(.nav-count) {
+        min-width: 17px;
+        height: 16px;
+        font-size: 8px;
+    }
+    .root :global(.topbar-tools) {
+        gap: 7px;
+        margin-left: 17px;
+    }
+    .root :global(.search-box) {
+        width: 34px;
+        height: 34px;
+        justify-content: center;
+        padding: 0;
+        border-color: transparent;
+        background: transparent;
+    }
+    .root :global(.search-box input), .root :global(.search-box kbd) {
+        display: none;
+    }
+    .root :global(.search-box > svg) {
+        width: 18px;
+    }
+    .root :global(.search-box.search-open) {
+        position: absolute;
+        right: 94px;
+        width: min(220px, calc(100vw - 185px));
+        justify-content: flex-start;
+        padding: 0 8px;
+        border-color: #e3e9df;
+        background: white;
+    }
+    .root :global(.search-box.search-open input) {
+        display: block;
+        font-size: 10px;
+    }
+    .root :global(.search-box.search-open > svg) {
+        width: 15px;
+    }
+    .root :global(.notification-button) {
+        width: 31px;
+        height: 31px;
+    }
+    .root :global(.topbar-rule), .root :global(.profile-name), .root :global(.profile-button > svg) {
+        display: none;
+    }
+    .root :global(.profile-avatar) {
+        width: 29px;
+        height: 29px;
+    }
+    .root :global(.profile-button) {
+        padding: 0;
+    }
+}
+@media (max-width: 420px) {
+    .root:global(.topbar) {
+        padding: 0 11px;
+    }
+    .root :global(.main-nav) {
+        gap: 10px;
+        margin-left: 12px;
+    }
+    .root :global(.main-nav a) {
+        font-size: 9px;
+    }
+    .root :global(.topbar-tools) {
+        gap: 4px;
+        margin-left: 10px;
+    }
+}
