@@ -1,3 +1,5 @@
+![Kinfield CRM Contact Board screenshot](./screenshot.png)
+
 # Kinfield CRM Contact Board
 
 Kinfield is a calm, practical workspace for organizing contacts, tracking relationship stages, and keeping thoughtful follow-ups on the calendar.
