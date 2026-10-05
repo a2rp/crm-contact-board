@@ -1,0 +1,284 @@
+
+.root :global(.welcome-row) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 25px;
+    scroll-margin-top: 98px;
+}
+.root :global(.date-kicker) {
+    color: #929e94;
+    font-size: 9px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+}
+.root :global(.date-kicker) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.root :global(.live-dot) {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #92b65c;
+    box-shadow: 0 0 0 3px rgba(146, 182, 92, 0.14);
+}
+.root :global(.kicker-separator) {
+    color: #c9d0c6;
+}
+.root :global(h1) {
+    margin: 0;
+}
+.root :global(h1) {
+    color: var(--ink);
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    line-height: 1.04;
+}
+.root :global(h1 em) {
+    color: #86a455;
+    font-weight: 400;
+}
+.root :global(.welcome-copy) {
+    margin-top: 9px;
+    color: #849087;
+    font-size: 12px;
+}
+.root :global(.add-button) {
+    margin-bottom: 1px;
+}
+
+.root :global(.metric-row) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.9fr;
+    gap: 13px;
+    margin-bottom: 36px;
+}
+.root :global(.metric-card) {
+    min-height: 128px;
+    padding: 16px 17px 14px;
+    border: 1px solid #e6ebe2;
+    border-radius: 10px;
+    background: white;
+}
+.root :global(.metric-main) {
+    background: #f1f5ed;
+}
+.root :global(.metric-accent) {
+    background: #f8faed;
+}
+.root :global(.metric-head) {
+    min-height: 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.root :global(.metric-icon) {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 7px;
+    background: rgba(74, 103, 75, 0.08);
+    color: #567257;
+}
+.root :global(.metric-icon svg) {
+    width: 13px;
+    height: 13px;
+}
+.root :global(.metric-label) {
+    color: #839086;
+    font-size: 8px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+}
+.root :global(.mini-menu) {
+    display: inline-grid;
+    place-items: center;
+    margin-left: auto;
+    padding: 3px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: transparent;
+    color: #94a097;
+    cursor: pointer;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+.root :global(.mini-menu:hover) {
+    border-color: #dce4d8;
+    box-shadow: 0 2px 8px rgba(44, 68, 52, 0.07);
+}
+.root :global(.mini-menu svg) {
+    width: 16px;
+    height: 16px;
+}
+.root :global(.metric-value) {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 10px;
+    color: #2e4436;
+    font-size: 29px;
+    font-weight: 650;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+.root :global(.metric-value > span) {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.root :global(.metric-change) {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: #86a45c;
+}
+.root :global(.metric-change svg) {
+    width: 12px;
+    height: 12px;
+}
+.root :global(.metric-out-of) {
+    color: #a5aea4;
+}
+.root :global(.metric-soft) {
+    color: #a4ad9e;
+}
+.root :global(.metric-card > p) {
+    margin-top: 9px;
+    color: #9aa49b;
+    font-size: 9px;
+}
+.root :global(.metric-card > p strong) {
+    color: #6b796d;
+    font-weight: 650;
+}
+.root :global(.metric-pulse) {
+    width: 6px;
+    height: 6px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #e49872;
+}
+.root :global(.metric-caption) {
+    margin-left: auto;
+    color: #aab3a7;
+    font-size: 7px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+}
+.root :global(.metric-note) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 128px;
+    padding: 10px 19px;
+    border-left: 1px solid #dce4d8;
+}
+.root :global(.note-mark) {
+    height: 23px;
+    color: #b4c987;
+    font-family: Georgia, serif;
+    font-size: 39px;
+    line-height: 1;
+}
+.root :global(.metric-note p) {
+    max-width: 170px;
+    color: #617364;
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.2;
+}
+.root :global(.note-attribution) {
+    margin-top: 11px;
+    color: #a0aa9e;
+    font-size: 7px;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+}
+@media (max-width: 1100px) {
+    .root :global(.metric-row) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .root :global(.metric-note) {
+        display: none;
+    }
+}
+@media (max-width: 760px) {
+    .root :global(.welcome-row) {
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    .root :global(.date-kicker) {
+        flex-wrap: wrap;
+        gap: 6px;
+        max-width: 270px;
+        font-size: 7px;
+    }
+    .root :global(h1) {
+        font-size: 37px;
+    }
+    .root :global(.welcome-copy) {
+        max-width: 310px;
+        font-size: 10px;
+        line-height: 1.45;
+    }
+    .root :global(.add-button) {
+        min-width: 39px;
+        width: 39px;
+        height: 39px;
+        min-height: 39px;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 0;
+    }
+    .root :global(.add-button svg) {
+        width: 18px;
+        height: 18px;
+    }
+    .root :global(.metric-row) {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+    .root :global(.metric-card) {
+        min-height: 112px;
+        padding: 12px;
+    }
+    .root :global(.metric-third) {
+        display: none;
+    }
+    .root :global(.metric-value) {
+        font-size: 27px;
+    }
+    .root :global(.metric-label) {
+        font-size: 7px;
+    }
+    .root :global(.metric-card > p) {
+        font-size: 8px;
+    }
+}
+@media (max-width: 420px) {
+    .root :global(.metric-card) {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+    .root :global(.metric-icon) {
+        width: 21px;
+        height: 21px;
+    }
+    .root :global(.metric-label) {
+        letter-spacing: 0.06em;
+    }
+    .root :global(.metric-value) {
+        font-size: 25px;
+    }
+}

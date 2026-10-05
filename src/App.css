@@ -57,59 +57,14 @@ textarea:focus-visible {
     margin: 0 auto;
     padding: 112px 34px 30px;
 }
-.welcome-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 24px;
-    margin-bottom: 25px;
-    scroll-margin-top: 98px;
-}
-.date-kicker,
 .eyebrow {
     color: #929e94;
     font-size: 9px;
     font-weight: 750;
     letter-spacing: 0.14em;
 }
-.date-kicker {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-.live-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #92b65c;
-    box-shadow: 0 0 0 3px rgba(146, 182, 92, 0.14);
-}
-.kicker-separator {
-    color: #c9d0c6;
-}
-h1,
-h2,
-h3,
-p {
+h2, h3, p {
     margin: 0;
-}
-h1 {
-    color: var(--ink);
-    font-family: "DM Serif Display", Georgia, serif;
-    font-size: clamp(36px, 4vw, 48px);
-    font-weight: 400;
-    letter-spacing: -1.5px;
-    line-height: 1.04;
-}
-h1 em {
-    color: #86a455;
-    font-weight: 400;
-}
-.welcome-copy {
-    margin-top: 9px;
-    color: #849087;
-    font-size: 12px;
 }
 .button {
     min-height: 40px;
@@ -140,55 +95,6 @@ h1 em {
     border-color: #426852;
     box-shadow: 0 5px 14px rgba(42, 69, 53, 0.2);
 }
-.add-button {
-    margin-bottom: 1px;
-}
-
-.metric-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.9fr;
-    gap: 13px;
-    margin-bottom: 36px;
-}
-.metric-card {
-    min-height: 128px;
-    padding: 16px 17px 14px;
-    border: 1px solid #e6ebe2;
-    border-radius: 10px;
-    background: white;
-}
-.metric-main {
-    background: #f1f5ed;
-}
-.metric-accent {
-    background: #f8faed;
-}
-.metric-head {
-    min-height: 22px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.metric-icon {
-    width: 24px;
-    height: 24px;
-    display: grid;
-    place-items: center;
-    border-radius: 7px;
-    background: rgba(74, 103, 75, 0.08);
-    color: #567257;
-}
-.metric-icon svg {
-    width: 13px;
-    height: 13px;
-}
-.metric-label {
-    color: #839086;
-    font-size: 8px;
-    font-weight: 750;
-    letter-spacing: 0.1em;
-}
-.mini-menu,
 .column-menu {
     display: inline-grid;
     place-items: center;
@@ -203,99 +109,13 @@ h1 em {
         border-color 180ms ease,
         box-shadow 180ms ease;
 }
-.mini-menu:hover,
 .column-menu:hover {
     border-color: #dce4d8;
     box-shadow: 0 2px 8px rgba(44, 68, 52, 0.07);
 }
-.mini-menu svg,
 .column-menu svg {
     width: 16px;
     height: 16px;
-}
-.metric-value {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-top: 10px;
-    color: #2e4436;
-    font-size: 29px;
-    font-weight: 650;
-    letter-spacing: -1.5px;
-    line-height: 1;
-}
-.metric-value > span {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0;
-}
-.metric-change {
-    display: inline-flex;
-    align-items: center;
-    gap: 2px;
-    color: #86a45c;
-}
-.metric-change svg {
-    width: 12px;
-    height: 12px;
-}
-.metric-out-of {
-    color: #a5aea4;
-}
-.metric-soft {
-    color: #a4ad9e;
-}
-.metric-card > p {
-    margin-top: 9px;
-    color: #9aa49b;
-    font-size: 9px;
-}
-.metric-card > p strong {
-    color: #6b796d;
-    font-weight: 650;
-}
-.metric-pulse {
-    width: 6px;
-    height: 6px;
-    margin-left: auto;
-    border-radius: 50%;
-    background: #e49872;
-}
-.metric-caption {
-    margin-left: auto;
-    color: #aab3a7;
-    font-size: 7px;
-    font-weight: 750;
-    letter-spacing: 0.1em;
-}
-.metric-note {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 128px;
-    padding: 10px 19px;
-    border-left: 1px solid #dce4d8;
-}
-.note-mark {
-    height: 23px;
-    color: #b4c987;
-    font-family: Georgia, serif;
-    font-size: 39px;
-    line-height: 1;
-}
-.metric-note p {
-    max-width: 170px;
-    color: #617364;
-    font-family: "DM Serif Display", Georgia, serif;
-    font-size: 17px;
-    line-height: 1.2;
-}
-.note-attribution {
-    margin-top: 11px;
-    color: #a0aa9e;
-    font-size: 7px;
-    font-weight: 750;
-    letter-spacing: 0.13em;
 }
 
 .board-section {
@@ -975,12 +795,6 @@ h1 em {
         padding-right: 22px;
         padding-left: 22px;
     }
-    .metric-row {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .metric-note {
-        display: none;
-    }
     .kanban-board {
         gap: 8px;
     }
@@ -996,59 +810,6 @@ h1 em {
     }
     .page-content {
         padding: 93px 16px 18px;
-    }
-    .welcome-row {
-        align-items: flex-start;
-        margin-bottom: 20px;
-    }
-    .date-kicker {
-        flex-wrap: wrap;
-        gap: 6px;
-        max-width: 270px;
-        font-size: 7px;
-    }
-    h1 {
-        font-size: 37px;
-    }
-    .welcome-copy {
-        max-width: 310px;
-        font-size: 10px;
-        line-height: 1.45;
-    }
-    .add-button {
-        min-width: 39px;
-        width: 39px;
-        height: 39px;
-        min-height: 39px;
-        padding: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        font-size: 0;
-    }
-    .add-button svg {
-        width: 18px;
-        height: 18px;
-    }
-    .metric-row {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-bottom: 25px;
-    }
-    .metric-card {
-        min-height: 112px;
-        padding: 12px;
-    }
-    .metric-third {
-        display: none;
-    }
-    .metric-value {
-        font-size: 27px;
-    }
-    .metric-label {
-        font-size: 7px;
-    }
-    .metric-card > p {
-        font-size: 8px;
     }
     .section-heading {
         align-items: flex-end;
@@ -1181,20 +942,6 @@ h1 em {
     .page-content {
         padding-right: 11px;
         padding-left: 11px;
-    }
-    .metric-card {
-        padding-right: 8px;
-        padding-left: 8px;
-    }
-    .metric-icon {
-        width: 21px;
-        height: 21px;
-    }
-    .metric-label {
-        letter-spacing: 0.06em;
-    }
-    .metric-value {
-        font-size: 25px;
     }
     .section-title-wrap h2 {
         font-size: 17px;
