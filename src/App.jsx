@@ -30,6 +30,7 @@ import ContactModal from "./components/ContactModal/index.jsx";
 import Header from "./components/Header/index.jsx";
 import Overview from "./components/Overview/index.jsx";
 import ContactBoard from "./components/ContactBoard/index.jsx";
+import FollowUps from "./components/FollowUps/index.jsx";
 import "./App.css";
 
 function App() {
@@ -228,131 +229,18 @@ function App() {
                     onToast={setToast}
                 />
 
-                <section className="bottom-grid" id="follow-ups">
-                    <article className="followup-panel">
-                        <div className="panel-heading">
-                            <div>
-                                <div className="eyebrow">
-                                    MAKE THE NEXT MOVE
-                                </div>
-                                <h2>
-                                    Coming up
-                                    <span className="heading-period">.</span>
-                                </h2>
-                            </div>
-                            <button
-                                type="button"
-                                className="text-button"
-                                onClick={() =>
-                                    setToast(
-                                        `${thisWeek} follow-ups are scheduled this week`,
-                                    )
-                                }
-                            >
-                                This week <FiChevronDown />
-                            </button>
-                        </div>
-                        <div className="followup-list">
-                            {upcoming.map((contact) => (
-                                <div className="followup-item" key={contact.id}>
-                                    <span
-                                        className={`follow-date ${contact.nextFollowUp <= isoDate() ? "today" : ""}`}
-                                    >
-                                        <strong>
-                                            {new Date(
-                                                `${contact.nextFollowUp}T12:00:00`,
-                                            ).getDate()}
-                                        </strong>
-                                        <small>
-                                            {new Date(
-                                                `${contact.nextFollowUp}T12:00:00`,
-                                            )
-                                                .toLocaleDateString("en-US", {
-                                                    month: "short",
-                                                })
-                                                .toUpperCase()}
-                                        </small>
-                                    </span>
-                                    <Avatar contact={contact} size="small" />
-                                    <button
-                                        type="button"
-                                        className="followup-person"
-                                        onClick={() => openContact(contact)}
-                                    >
-                                        <strong>{contact.name}</strong>
-                                        <span>
-                                            {contact.company} <i>Â·</i>{" "}
-                                            {contact.role}
-                                        </span>
-                                    </button>
-                                    <span
-                                        className={`follow-relative ${contact.nextFollowUp <= isoDate() ? "is-today" : ""}`}
-                                    >
-                                        {relativeDate(contact.nextFollowUp)}
-                                    </span>
-                                    <button
-                                        type="button"
-                                        className="done-button"
-                                        onClick={() => markDone(contact)}
-                                        aria-label={`Mark follow-up with ${contact.name} done`}
-                                    >
-                                        <FiCheck />
-                                    </button>
-                                </div>
-                            ))}
-                        </div>
-                        <a
-                            className="panel-footer-link"
-                            href="#contacts"
-                            onClick={() => setActiveNav("contacts")}
-                        >
-                            See everyone on your board <FiArrowUpRight />
-                        </a>
-                    </article>
-                    <article className="week-card">
-                        <div className="week-card-top">
-                            <span className="week-badge">
-                                <FiCalendar /> WEEKLY RHYTHM
-                            </span>
-                            <span className="week-spark" aria-hidden="true">
-                                <i />
-                                <i />
-                                <i />
-                                <i />
-                                <i />
-                                <i />
-                                <i />
-                            </span>
-                        </div>
-                        <div className="week-count">
-                            {thisWeek}
-                            <span>planned</span>
-                        </div>
-                        <p>
-                            A good week starts with a small, thoughtful hello.
-                        </p>
-                        <div className="week-bottom">
-                            <span>
-                                <i /> Your next touch is{" "}
-                                {upcoming[0]
-                                    ? relativeDate(
-                                          upcoming[0].nextFollowUp,
-                                      ).toLowerCase()
-                                    : "all set"}
-                            </span>
-                            <button
-                                type="button"
-                                onClick={() => {
-                                    setModalContact(null);
-                                    setModalOpen(true);
-                                }}
-                                aria-label="Create a reminder"
-                            >
-                                <FiPlus />
-                            </button>
-                        </div>
-                    </article>
-                </section>
+                <FollowUps
+                    upcoming={upcoming}
+                    thisWeek={thisWeek}
+                    onOpenContact={openContact}
+                    onMarkDone={markDone}
+                    onToast={setToast}
+                    onNavChange={setActiveNav}
+                    onAddContact={() => {
+                        setModalContact(null);
+                        setModalOpen(true);
+                    }}
+                />
 
                 <div className="closing-note">
                     <span className="closing-icon">

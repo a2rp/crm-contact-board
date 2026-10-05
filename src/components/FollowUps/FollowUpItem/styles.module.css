@@ -1,0 +1,104 @@
+
+.root:global(.followup-item) {
+    min-height: 47px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eff2ee;
+}
+.root :global(.follow-date) {
+    width: 29px;
+    height: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background: #f4f6f1;
+    color: #758574;
+}
+.root :global(.follow-date strong) {
+    font-size: 11px;
+    line-height: 1;
+}
+.root :global(.follow-date small) {
+    margin-top: 3px;
+    font-size: 6px;
+    font-weight: 750;
+}
+.root :global(.follow-date.today) {
+    background: #eff4dc;
+    color: #788d53;
+}
+.root :global(.followup-person) {
+    min-width: 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+.root :global(.followup-person strong) {
+    color: #425548;
+    font-size: 9px;
+    font-weight: 700;
+}
+.root :global(.followup-person span) {
+    overflow: hidden;
+    max-width: 260px;
+    color: #929d94;
+    font-size: 8px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.root :global(.followup-person i) {
+    padding: 0 3px;
+    color: #bdc6bc;
+    font-style: normal;
+}
+.root :global(.follow-relative) {
+    color: #879488;
+    font-size: 8px;
+    white-space: nowrap;
+}
+.root :global(.follow-relative.is-today) {
+    color: #a88557;
+}
+.root :global(.done-button) {
+    width: 25px;
+    height: 25px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #e5ebe1;
+    border-radius: 50%;
+    background: white;
+    color: #7e9a6c;
+    cursor: pointer;
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+.root :global(.done-button:hover) {
+    border-color: #aebf9f;
+    box-shadow: 0 2px 8px rgba(44, 68, 52, 0.08);
+}
+.root :global(.done-button svg) {
+    width: 12px;
+    height: 12px;
+}
+@media (max-width: 760px) {
+    .root:global(.followup-item) {
+        gap: 7px;
+    }
+    .root :global(.followup-person span) {
+        max-width: 155px;
+        font-size: 7px;
+    }
+    .root :global(.follow-relative) {
+        font-size: 7px;
+    }
+}
