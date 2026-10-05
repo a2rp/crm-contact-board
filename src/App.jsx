@@ -13,7 +13,7 @@ import ContactBoard from "./components/ContactBoard/index.jsx";
 import FollowUps from "./components/FollowUps/index.jsx";
 import ClosingNote from "./components/ClosingNote/index.jsx";
 import Toast from "./components/Toast/index.jsx";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
     const [contacts, setContacts] = useState(readContacts);
@@ -158,7 +158,7 @@ function App() {
         .sort((a, b) => a.nextFollowUp.localeCompare(b.nextFollowUp))
         .slice(0, 4);
     return (
-        <div className="app-shell">
+        <div className={`${styles.root} app-shell`}>
             <Header
                 activeNav={activeNav}
                 contactsCount={contacts.length}
