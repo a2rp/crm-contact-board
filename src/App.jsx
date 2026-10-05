@@ -215,7 +215,12 @@ function ContactModal({ contact, onClose, onSave }) {
 function Footer() {
   return (
     <footer className="site-footer">
-      <p>© {currentYear} <a href="https://github.com/a2rp" target="_blank" rel="noreferrer">Ashish Ranjan</a>. All rights reserved.</p>
+      <div className="footer-credit">
+        <a className="footer-logo" href="https://www.ashishranjan.net" target="_blank" rel="noreferrer" aria-label="Ashish Ranjan portfolio">
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" />
+        </a>
+        <p>© {currentYear} <a href="https://github.com/a2rp" target="_blank" rel="noreferrer">Ashish Ranjan</a>. All rights reserved.</p>
+      </div>
       <nav className="footer-links" aria-label="Ashish Ranjan links">
         {footerLinks.map((link) => <a href={link.href} key={link.label} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel="noreferrer" aria-label={link.label} title={link.label}>{link.icon}<span>{link.label}</span></a>)}
       </nav>
