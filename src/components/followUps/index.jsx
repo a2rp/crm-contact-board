@@ -1,6 +1,6 @@
 import { FiArrowUpRight, FiChevronDown } from "react-icons/fi";
-import FollowUpItem from "./FollowUpItem/index.jsx";
-import WeekCard from "./WeekCard/index.jsx";
+import FollowUpItem from "./followUpItem/index.jsx";
+import WeekCard from "./weekCard/index.jsx";
 import styles from "./styles.module.css";
 
 function FollowUps({ upcoming, thisWeek, onOpenContact, onMarkDone, onToast, onNavChange, onAddContact }) {

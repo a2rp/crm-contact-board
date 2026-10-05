@@ -5,14 +5,14 @@ import {
     isoDate,
 } from "./utils/dates.js";
 import { readContacts } from "./utils/contactStorage.js";
-import Footer from "./components/Footer/index.jsx";
-import ContactModal from "./components/ContactModal/index.jsx";
-import Header from "./components/Header/index.jsx";
-import Overview from "./components/Overview/index.jsx";
-import ContactBoard from "./components/ContactBoard/index.jsx";
-import FollowUps from "./components/FollowUps/index.jsx";
-import ClosingNote from "./components/ClosingNote/index.jsx";
-import Toast from "./components/Toast/index.jsx";
+import Footer from "./components/footer/index.jsx";
+import ContactModal from "./components/contactModal/index.jsx";
+import Header from "./components/header/index.jsx";
+import Overview from "./components/overview/index.jsx";
+import ContactBoard from "./components/contactBoard/index.jsx";
+import FollowUps from "./components/followUps/index.jsx";
+import ClosingNote from "./components/closingNote/index.jsx";
+import Toast from "./components/toast/index.jsx";
 import styles from "./App.module.css";
 
 function App() {

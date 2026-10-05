@@ -1,5 +1,5 @@
 import { FiBriefcase, FiChevronRight, FiClock, FiMoreHorizontal } from "react-icons/fi";
-import Avatar from "../Avatar/index.jsx";
+import Avatar from "../avatar/index.jsx";
 import { dateLabel, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
 

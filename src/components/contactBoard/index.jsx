@@ -11,8 +11,8 @@
 } from "react-icons/fi";
 import { stageList } from "../../data/contacts.js";
 import { dateLabel, isoDate, relativeDate } from "../../utils/dates.js";
-import Avatar from "./Avatar/index.jsx";
-import ContactCard from "./ContactCard/index.jsx";
+import Avatar from "./avatar/index.jsx";
+import ContactCard from "./contactCard/index.jsx";
 import styles from "./styles.module.css";
 
 function ContactBoard({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage, onToast }) {

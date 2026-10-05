@@ -1,5 +1,5 @@
 import { FiCheck } from "react-icons/fi";
-import Avatar from "../../ContactBoard/Avatar/index.jsx";
+import Avatar from "../../contactBoard/avatar/index.jsx";
 import { isoDate, relativeDate } from "../../../utils/dates.js";
 import styles from "./styles.module.css";
 
