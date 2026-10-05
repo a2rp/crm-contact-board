@@ -34,4 +34,4 @@ npm run preview
 npm run deploy
 ```
 
-The `predeploy` script builds the app first. The deploy command publishes `dist` to the `gh-pages` branch. Set the repository Pages source to `gh-pages` and `/(root)`.
+The `predeploy` script builds the app first. The deploy command publishes `dist` to the `gh-pages` branch. The Vite base path and homepage URL match the project site so the built `index.html` can load its assets. GitHub Pages uses `gh-pages` and `/(root)` as its publishing source.
