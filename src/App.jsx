@@ -1,29 +1,10 @@
 ﻿import { useEffect, useMemo, useState } from "react";
 import {
-    FiArrowDownRight,
-    FiArrowUpRight,
-    FiCalendar,
-    FiCheck,
-    FiChevronDown,
-    FiChevronRight,
-    FiDownload,
-    FiFilter,
-    FiGrid,
-    FiMoreHorizontal,
-    FiPlus,
-    FiSliders,
-    FiUsers,
-} from "react-icons/fi";
-import {
-    dateLabel,
     dateToday,
     formatIsoDate,
     isoDate,
-    relativeDate,
 } from "./utils/dates.js";
 import { readContacts } from "./utils/contactStorage.js";
-import Avatar from "./components/ContactBoard/Avatar/index.jsx";
-import ContactCard from "./components/ContactBoard/ContactCard/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import ContactModal from "./components/ContactModal/index.jsx";
 import Header from "./components/Header/index.jsx";
@@ -31,6 +12,7 @@ import Overview from "./components/Overview/index.jsx";
 import ContactBoard from "./components/ContactBoard/index.jsx";
 import FollowUps from "./components/FollowUps/index.jsx";
 import ClosingNote from "./components/ClosingNote/index.jsx";
+import Toast from "./components/Toast/index.jsx";
 import "./App.css";
 
 function App() {
@@ -253,14 +235,7 @@ function App() {
                     onSave={saveContact}
                 />
             )}
-            {toast && (
-                <div className="toast-message" role="status">
-                    <span>
-                        <FiCheck />
-                    </span>
-                    {toast}
-                </div>
-            )}
+            {toast && <Toast message={toast} />}
         </div>
     );
 }
