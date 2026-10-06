@@ -29,6 +29,20 @@ const Header = ({ activeNav, contactsCount, onNavChange, search, onSearchChange,
         };
     }, [profileMenuOpen]);
 
+    useEffect(() => {
+        const openSearchOnShortcut = (event) => {
+            if (!event.ctrlKey || event.key.toLowerCase() !== "k") return;
+
+            event.preventDefault();
+            setSearchOpen(true);
+            requestAnimationFrame(() => searchRef.current?.focus());
+        };
+
+        document.addEventListener("keydown", openSearchOnShortcut);
+        return () =>
+            document.removeEventListener("keydown", openSearchOnShortcut);
+    }, []);
+
     return (
             <header className={styles.topbar}>
                 <a
