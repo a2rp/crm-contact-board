@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
     FiChevronDown,
     FiChevronRight,
@@ -16,7 +17,29 @@ import ContactCard from "./contactCard/index.jsx";
 import styles from "./styles.module.css";
 import appStyles from "../../App.module.css";
 
-const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage, onToast }) => {
+const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onViewChange, onExport, onOpenContact, onAddToStage }) => {
+    const [openMenuStage, setOpenMenuStage] = useState(null);
+
+    useEffect(() => {
+        if (!openMenuStage) return undefined;
+
+        const closeOnOutsidePointer = (event) => {
+            if (!event.target.closest?.("[data-column-menu]")) {
+                setOpenMenuStage(null);
+            }
+        };
+        const closeOnEscape = (event) => {
+            if (event.key === "Escape") setOpenMenuStage(null);
+        };
+
+        document.addEventListener("pointerdown", closeOnOutsidePointer);
+        document.addEventListener("keydown", closeOnEscape);
+        return () => {
+            document.removeEventListener("pointerdown", closeOnOutsidePointer);
+            document.removeEventListener("keydown", closeOnEscape);
+        };
+    }, [openMenuStage]);
+
     return (
         <section className={styles["board-section"]} id="contacts">
             <div className={styles["section-heading"]}>
@@ -107,18 +130,68 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                     <span className={styles["column-count"]}>
                                         {inStage.length}
                                     </span>
-                                    <button
-                                        type="button"
-                                        className={styles["column-menu"]}
-                                        aria-label={`${stage} options`}
-                                        onClick={() =>
-                                            onToast(
-                                                `${stage} contacts are organized below`,
-                                            )
-                                        }
+                                    <div
+                                        className={styles["column-menu-wrap"]}
+                                        data-column-menu
                                     >
-                                        <FiMoreHorizontal />
-                                    </button>
+                                        <button
+                                            type="button"
+                                            className={styles["column-menu"]}
+                                            aria-label={`${stage} options`}
+                                            aria-haspopup="menu"
+                                            aria-expanded={openMenuStage === stage}
+                                            aria-controls={`column-menu-${index}`}
+                                            onClick={() =>
+                                                setOpenMenuStage((current) =>
+                                                    current === stage ? null : stage,
+                                                )
+                                            }
+                                        >
+                                            <FiMoreHorizontal />
+                                        </button>
+                                        {openMenuStage === stage && (
+                                            <div
+                                                className={styles["column-dropdown"]}
+                                                id={`column-menu-${index}`}
+                                                role="menu"
+                                                aria-label={`${stage} options`}
+                                            >
+                                                <span className={styles["column-dropdown-title"]}>
+                                                    {stage} stage
+                                                </span>
+                                                <button
+                                                    type="button"
+                                                    role="menuitem"
+                                                    onClick={() => {
+                                                        setOpenMenuStage(null);
+                                                        onAddToStage(stage);
+                                                    }}
+                                                >
+                                                    <FiPlus /> Add a person
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    role="menuitem"
+                                                    onClick={() => {
+                                                        setOpenMenuStage(null);
+                                                        onStageChange(stage);
+                                                    }}
+                                                >
+                                                    <FiFilter /> Filter this stage
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    role="menuitem"
+                                                    onClick={() => {
+                                                        setOpenMenuStage(null);
+                                                        onStageChange("All stages");
+                                                    }}
+                                                >
+                                                    <FiUsers /> Show all stages
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                                 <div className={styles["column-cards"]}>
                                     {inStage.length ? (

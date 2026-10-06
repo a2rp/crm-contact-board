@@ -203,7 +203,6 @@ const App = () => {
                         });
                         setModalOpen(true);
                     }}
-                    onToast={setToast}
                 />
 
                 <FollowUps

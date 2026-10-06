@@ -223,28 +223,90 @@
                     font-size: 8px;
                 }
 
-                .column-menu {
-                    display: inline-grid;
-                    place-items: center;
+                .column-menu-wrap {
+                    position: relative;
+                    z-index: 5;
+                    display: flex;
+                    align-items: center;
                     margin-left: auto;
-                    padding: 3px;
-                    border: 1px solid transparent;
-                    border-radius: 5px;
-                    background: transparent;
-                    color: #94a097;
-                    cursor: pointer;
-                    transition:
-                        border-color 180ms ease,
-                        box-shadow 180ms ease;
 
-                    &:hover {
-                        border-color: #dce4d8;
-                        box-shadow: 0 2px 8px rgba(44, 68, 52, 0.07);
+                    .column-menu {
+                        display: inline-grid;
+                        place-items: center;
+                        padding: 3px;
+                        border: 1px solid transparent;
+                        border-radius: 5px;
+                        background: transparent;
+                        color: #94a097;
+                        cursor: pointer;
+                        transition:
+                            border-color 180ms ease,
+                            box-shadow 180ms ease;
+
+                        &:hover,
+                        &:focus-visible {
+                            border-color: #dce4d8;
+                            box-shadow: 0 2px 8px rgba(44, 68, 52, 0.07);
+                        }
+
+                        svg {
+                            width: 16px;
+                            height: 16px;
+                        }
                     }
 
-                    svg {
-                        width: 16px;
-                        height: 16px;
+                    .column-dropdown {
+                        position: absolute;
+                        top: calc(100% + 6px);
+                        right: 0;
+                        z-index: 10;
+                        width: 166px;
+                        padding: 6px;
+                        border: 1px solid #e2e8de;
+                        border-radius: 8px;
+                        background: white;
+                        box-shadow: 0 10px 24px rgba(44, 68, 52, 0.14);
+
+                        .column-dropdown-title {
+                            display: block;
+                            padding: 6px 8px 7px;
+                            color: #909b91;
+                            font-size: 8px;
+                            font-weight: 700;
+                            letter-spacing: 0.06em;
+                            text-transform: uppercase;
+                        }
+
+                        > button {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 7px;
+                            padding: 7px 8px;
+                            border: 1px solid transparent;
+                            border-radius: 6px;
+                            background: white;
+                            color: #5f6b60;
+                            font-size: 9px;
+                            text-align: left;
+                            white-space: nowrap;
+                            cursor: pointer;
+                            transition:
+                                border-color 160ms ease,
+                                box-shadow 160ms ease;
+
+                            &:hover,
+                            &:focus-visible {
+                                border-color: #e4e9e0;
+                                box-shadow: 0 2px 7px rgba(44, 68, 52, 0.07);
+                            }
+
+                            svg {
+                                width: 12px;
+                                height: 12px;
+                                color: #8b998a;
+                            }
+                        }
                     }
                 }
             }
