@@ -418,6 +418,22 @@
                 }
             }
 
+            .table-open {
+                padding: 0;
+                border: 0;
+                background: transparent;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+                cursor: pointer;
+
+                &:focus-visible {
+                    outline: 2px solid #7c9a64;
+                    outline-offset: 3px;
+                    border-radius: 3px;
+                }
+            }
+
             .stage-pill {
                 padding: 4px 7px;
                 border-radius: 5px;

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { dateToday, formatIsoDate, isoDate } from "./utils/dates.js";
-import { readContacts } from "./utils/contactStorage.js";
+import { createContactId, readContacts, writeContacts } from "./utils/contactStorage.js";
 import Footer from "./components/footer/index.jsx";
 import ContactModal from "./components/contactModal/index.jsx";
 import Header from "./components/header/index.jsx";
@@ -22,7 +22,7 @@ const App = () => {
     const [activeNav, setActiveNav] = useState("overview");
 
     useEffect(() => {
-        localStorage.setItem("kinfield-contacts", JSON.stringify(contacts));
+        writeContacts(contacts);
     }, [contacts]);
 
     useEffect(() => {
@@ -133,8 +133,13 @@ const App = () => {
             .map((row) =>
                 row
                     .map(
-                        (value) =>
-                            `"${String(value || "").replaceAll('"', '""')}"`,
+                        (value) => {
+                            const text = String(value || "");
+                            const safeText = /^[=+\-@]/.test(text.trimStart())
+                                ? `'${text}`
+                                : text;
+                            return `"${safeText.replaceAll('"', '""')}"`;
+                        },
                     )
                     .join(","),
             )
@@ -145,8 +150,10 @@ const App = () => {
         const link = document.createElement("a");
         link.href = url;
         link.download = "kinfield-contacts.csv";
+        document.body.append(link);
         link.click();
-        URL.revokeObjectURL(url);
+        link.remove();
+        window.setTimeout(() => URL.revokeObjectURL(url), 0);
         setToast("Your contact list is ready");
     };
 
@@ -188,7 +195,7 @@ const App = () => {
                     onAddToStage={(stage) => {
                         setModalContact({
                             stage,
-                            id: "c-" + Date.now(),
+                            id: createContactId(),
                             name: "",
                             role: "",
                             company: "",

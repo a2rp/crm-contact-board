@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight, FiCheck, FiX } from "react-icons/fi";
 import { stageList } from "../../data/contacts.js";
 import { isoDate } from "../../utils/dates.js";
+import { createContactId } from "../../utils/contactStorage.js";
 import styles from "./styles.module.css";
 import appStyles from "../../App.module.css";
 
 const ContactModal = ({ contact, onClose, onSave }) => {
+    const dialogRef = useRef(null);
+    const onCloseRef = useRef(onClose);
     const isExisting = Boolean(contact?.name);
     const [form, setForm] = useState(
         () =>
             contact || {
-                id: `c-${Date.now()}`,
+                id: createContactId(),
                 name: "",
                 role: "",
                 company: "",
@@ -33,6 +36,60 @@ const ContactModal = ({ contact, onClose, onSave }) => {
             [event.target.name]: event.target.value,
         }));
 
+    useEffect(() => {
+        onCloseRef.current = onClose;
+    }, [onClose]);
+
+    useEffect(() => {
+        const previousFocus = document.activeElement;
+        const dialog = dialogRef.current;
+        const focusableSelector =
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+        const focusable = () =>
+            [...(dialog?.querySelectorAll(focusableSelector) || [])].filter(
+                (element) => element.getClientRects().length,
+            );
+
+        dialog?.querySelector('input[name="name"]')?.focus();
+
+        const handleKeyDown = (event) => {
+            if (event.key === "Escape") {
+                event.preventDefault();
+                onCloseRef.current();
+                return;
+            }
+            if (event.key !== "Tab") return;
+
+            const items = focusable();
+            if (!items.length) {
+                event.preventDefault();
+                dialog?.focus();
+                return;
+            }
+
+            const first = items[0];
+            const last = items[items.length - 1];
+            if (!dialog?.contains(document.activeElement)) {
+                event.preventDefault();
+                (event.shiftKey ? last : first).focus();
+            } else if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        };
+
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+            if (previousFocus instanceof HTMLElement && previousFocus.isConnected) {
+                previousFocus.focus();
+            }
+        };
+    }, []);
+
     const submit = (event) => {
         event.preventDefault();
         onSave({
@@ -54,6 +111,7 @@ const ContactModal = ({ contact, onClose, onSave }) => {
             }
         >
             <section
+                ref={dialogRef}
                 className={styles["contact-modal"]}
                 role="dialog"
                 aria-modal="true"

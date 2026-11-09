@@ -11,7 +11,7 @@ import {
     FiUsers,
 } from "react-icons/fi";
 import { stageList } from "../../data/contacts.js";
-import { dateLabel, isoDate, relativeDate } from "../../utils/dates.js";
+import { dateLabel, relativeDate } from "../../utils/dates.js";
 import Avatar from "./avatar/index.jsx";
 import ContactCard from "./contactCard/index.jsx";
 import styles from "./styles.module.css";
@@ -85,6 +85,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                             className={
                                 view === "board" ? styles.selected : undefined
                             }
+                            aria-pressed={view === "board"}
                             onClick={() => onViewChange("board")}
                             aria-label="Board view"
                         >
@@ -95,6 +96,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                             className={
                                 view === "list" ? styles.selected : undefined
                             }
+                            aria-pressed={view === "list"}
                             onClick={() => onViewChange("list")}
                             aria-label="List view"
                         >
@@ -233,11 +235,14 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                         </thead>
                         <tbody>
                             {filteredContacts.map((contact) => (
-                                <tr
-                                    key={contact.id}
-                                    onClick={() => onOpenContact(contact)}
-                                >
+                                <tr key={contact.id}>
                                     <td>
+                                        <button
+                                            type="button"
+                                            className={styles["table-open"]}
+                                            aria-label={`Open ${contact.name} details`}
+                                            onClick={() => onOpenContact(contact)}
+                                        >
                                         <span className={styles["table-person"]}>
                                             <Avatar
                                                 contact={contact}
@@ -252,6 +257,7 @@ const ContactBoard = ({ filteredContacts, activeStage, onStageChange, view, onVi
                                                 </small>
                                             </span>
                                         </span>
+                                        </button>
                                     </td>
                                     <td>{contact.company}</td>
                                     <td>
