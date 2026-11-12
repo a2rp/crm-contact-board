@@ -75,7 +75,7 @@ const Footer = () => {
                     />
                 </a>
                 <p>
-                    © {currentYear}{" "}
+                    © {currentYear()}{" "}
                     <a
                         href="https://github.com/a2rp"
                         target="_blank"

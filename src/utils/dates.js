@@ -1,7 +1,5 @@
-const today = new Date();
-
-export const currentYear = today.getFullYear();
-export const dateToday = today.toLocaleDateString("en-US", {
+export const currentYear = () => new Date().getFullYear();
+export const dateToday = () => new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
@@ -11,7 +9,7 @@ export const formatIsoDate = (date) =>
     `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
 export const isoDate = (offset = 0) => {
-    const date = new Date(today);
+    const date = new Date();
     date.setDate(date.getDate() + offset);
     return formatIsoDate(date);
 };

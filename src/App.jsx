@@ -20,6 +20,26 @@ const App = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [toast, setToast] = useState("");
     const [activeNav, setActiveNav] = useState("overview");
+    const [today, setToday] = useState(isoDate);
+
+    useEffect(() => {
+        let timeout;
+        const scheduleNextDayRefresh = () => {
+            const now = new Date();
+            const nextMidnight = new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate() + 1,
+            );
+            timeout = window.setTimeout(() => {
+                setToday(isoDate());
+                scheduleNextDayRefresh();
+            }, Math.max(1, nextMidnight.getTime() - now.getTime() + 25));
+        };
+
+        scheduleNextDayRefresh();
+        return () => window.clearTimeout(timeout);
+    }, []);
 
     useEffect(() => {
         writeContacts(contacts);
@@ -57,7 +77,7 @@ const App = () => {
     );
 
     const dueToday = contacts.filter(
-        (contact) => contact.nextFollowUp <= isoDate(),
+        (contact) => contact.nextFollowUp <= today,
     ).length;
     const openRelationships = contacts.filter(
         (contact) => contact.stage !== "Customer",
@@ -65,7 +85,7 @@ const App = () => {
     const thisWeek = contacts.filter((contact) => {
         const days =
             (new Date(`${contact.nextFollowUp}T12:00:00`) -
-                new Date(`${isoDate()}T12:00:00`)) /
+                new Date(`${today}T12:00:00`)) /
             86400000;
         return days >= 0 && days <= 7;
     }).length;
@@ -92,14 +112,14 @@ const App = () => {
     };
 
     const markDone = (contact) => {
-        const next = new Date(`${isoDate()}T12:00:00`);
+        const next = new Date(`${today}T12:00:00`);
         next.setDate(next.getDate() + 7);
         setContacts((current) =>
             current.map((item) =>
                 item.id === contact.id
                     ? {
                           ...item,
-                          lastContact: isoDate(),
+                          lastContact: today,
                           nextFollowUp: formatIsoDate(next),
                       }
                     : item,
@@ -176,7 +196,7 @@ const App = () => {
                     dueToday={dueToday}
                     openRelationships={openRelationships}
                     thisWeek={thisWeek}
-                    todayLabel={dateToday}
+                    todayLabel={dateToday()}
                     onAddContact={() => {
                         setModalContact(null);
                         setModalOpen(true);
